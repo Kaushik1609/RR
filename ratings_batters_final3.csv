@@ -1,0 +1,11 @@
+player_id,name,team,v4_rank,rating,ci_low,ci_high,grid_18,in_restricted,drop_one_rank,hp_balls,hp_matches,wpa_per_hp_ball,pass_count,pass_count_old,median_rank,final_rank
+3647,Shreyas Iyer,India / Kolkata Knight Riders,3,0.362,0.185,0.596,16,Y,12,161,18,0.013,4,4,8,1
+1699,Suryakumar Yadav,India / Mumbai Indians,2,0.362,0.156,0.517,12,Y,12,300,25,0.012,4,4,8,2
+8101,Ashutosh Sharma,Punjab Kings / Delhi Capitals,1,0.384,0.134,0.624,18,Y,17,92,10,0.029,3,4,6,3
+6931,Pathum Nissanka,Sri Lanka / Delhi Capitals,5,0.341,0.141,0.568,18,N,14,255,26,0.014,3,3,10,4
+6288,Shubman Gill,Gujarat Titans / India,4,0.347,0.051,0.61,16,Y,39,223,28,0.009,3,3,10,5
+3024,Mohammad Rizwan,Pakistan,7,0.315,0.162,0.45,12,N,13,190,16,0.003,3,3,12,6
+7897,Namboori Tilak Varma,Mumbai Indians / India,6,0.319,0.025,0.528,4,Y,27,353,31,0.004,2,2,11,7
+818,Mitchell Marsh,Delhi Capitals / Australia,9,0.302,0.121,0.481,7,Y,17,189,35,0.004,2,3,13,8
+6396,Tim David,Mumbai Indians / Australia,8,0.304,0.054,0.561,5,Y,25,130,25,0.017,2,2,13,9
+2573,Evin Lewis,Lucknow Super Giants / West Indies,10,0.294,0.051,0.487,12,N,34,67,8,0.006,2,2,14,10

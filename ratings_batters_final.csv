@@ -1,0 +1,88 @@
+rank_v4,rank_v3,player_id,name,team,hp_balls,hp_matches,pressure_level,ordinary_level,delta,shrunk_level,shrunk_delta,rating,ci_low,ci_high,top10_prob,median_rank,rank_low,rank_high,wpa_total,wpa_per_hp_ball,sensitivity_top10,flags,rank_final
+1,57,8101,Ashutosh Sharma,Punjab Kings / Delhi Capitals,92.0,10,1.234,-0.04,1.273,0.343,0.082,0.384,0.134,0.624,0.652,6,1,40,2.708,0.029,18,Matches < 12,1
+3,32,3647,Shreyas Iyer,India / Kolkata Knight Riders,161.0,18,0.596,0.441,0.155,0.343,0.038,0.362,0.185,0.596,0.608,8,1,31,2.043,0.013,16,None,2
+2,12,1699,Suryakumar Yadav,India / Mumbai Indians,300.0,25,0.562,0.494,0.068,0.353,0.019,0.362,0.156,0.517,0.598,8,2,32,3.545,0.012,12,None,3
+5,52,6931,Pathum Nissanka,Sri Lanka / Delhi Capitals,255.0,26,0.46,0.197,0.263,0.31,0.062,0.341,0.141,0.568,0.502,10,1,39,3.584,0.014,18,None,4
+4,28,6288,Shubman Gill,Gujarat Titans / India,223.0,28,0.446,0.167,0.279,0.301,0.092,0.347,0.051,0.61,0.502,10,1,52,2.039,0.009,16,None,5
+6,106,7897,Namboori Tilak Varma,Mumbai Indians / India,353.0,31,0.453,0.323,0.13,0.299,0.039,0.319,0.025,0.528,0.468,11,1,57,1.307,0.004,4,None,6
+7,35,3024,Mohammad Rizwan,Pakistan,190.0,16,0.464,-0.031,0.495,0.275,0.081,0.315,0.162,0.45,0.414,12,3,36,0.638,0.003,12,None,7
+8,6,6396,Tim David,Mumbai Indians / Australia,130.0,25,0.618,0.403,0.215,0.287,0.033,0.304,0.054,0.561,0.42,13,1,54,2.241,0.017,5,None,8
+9,55,818,Mitchell Marsh,Delhi Capitals / Australia,189.0,35,0.387,0.21,0.177,0.279,0.046,0.302,0.121,0.481,0.404,13,2,43,0.779,0.004,7,None,9
+10,38,2573,Evin Lewis,Lucknow Super Giants / West Indies,67.0,8,0.835,-1.048,1.882,0.243,0.102,0.294,0.051,0.487,0.372,14,2,54,0.37,0.006,12,Matches < 12,10
+12,2,1077,David Miller,Gujarat Titans / South Africa,169.0,23,0.49,0.227,0.263,0.259,0.053,0.286,0.028,0.53,0.388,15,1,57,0.441,0.003,14,None,11
+11,46,838,Glenn Maxwell,Australia / Royal Challengers Bengaluru,101.0,10,0.665,0.189,0.476,0.265,0.059,0.294,-0.066,0.491,0.342,16,2,71,2.134,0.021,3,CI includes 0; Matches < 12,12
+15,8,7216,Prabhsimran Singh,Punjab Kings / India A,84.0,18,0.334,-0.06,0.394,0.219,0.067,0.252,0.087,0.442,0.236,18,3,50,1.2,0.014,6,None,13
+13,69,768,Reeza Hendricks,South Africa,83.0,13,0.496,0.343,0.153,0.256,0.021,0.267,0.075,0.421,0.216,18,4,50,0.987,0.012,0,None,14
+14,18,6651,Towhid Hridoy,Bangladesh / Bangladesh A,123.0,16,0.55,0.422,0.128,0.25,0.018,0.259,-0.027,0.47,0.298,19,3,64,0.841,0.007,2,CI includes 0,15
+16,49,5553,Phil Salt,England / Delhi Capitals,183.0,29,0.43,0.691,-0.261,0.284,-0.072,0.248,0.007,0.459,0.284,20,3,62,3.017,0.016,0,None,16
+17,5,3672,Kusal Mendis,Sri Lanka / Gujarat Titans,171.0,21,0.396,0.344,0.052,0.243,0.007,0.246,-0.076,0.446,0.23,22,4,71,0.627,0.004,0,CI includes 0,17
+19,37,4708,Rinku Singh,Kolkata Knight Riders / India,70.0,15,0.56,0.55,0.01,0.225,-0.003,0.224,0.027,0.425,0.176,23,4,58,0.207,0.003,0,None,18
+18,15,4823,Washington Sundar,India / Sunrisers Hyderabad,91.0,10,0.466,-0.193,0.659,0.192,0.072,0.228,0.082,0.382,0.138,23,7,47,0.962,0.011,5,Matches < 12,19
+21,9,6725,Sherfane Rutherford,Royal Challengers Bengaluru / West Indies,123.0,13,0.359,0.142,0.217,0.201,0.034,0.218,0.006,0.474,0.244,24,2,61,-0.673,-0.005,0,WPA < Median,20
+24,92,4007,Ryan Rickelton,South Africa / Mumbai Indians,79.0,15,0.329,0.241,0.088,0.203,0.013,0.209,-0.09,0.527,0.246,26,2,73,1.596,0.02,0,CI includes 0,21
+22,36,3330,Hardik Pandya,Gujarat Titans / India,209.0,21,0.36,0.206,0.153,0.205,0.027,0.218,-0.08,0.42,0.194,26,5,71,-0.371,-0.002,0,CI includes 0; WPA < Median,22
+25,22,7544,Venkatesh Iyer,India / Kolkata Knight Riders,111.0,13,0.319,-0.066,0.385,0.182,0.053,0.209,-0.044,0.388,0.134,26,6,68,0.508,0.005,5,CI includes 0,23
+20,58,5939,Cameron Green,Australia / Mumbai Indians,106.0,17,0.333,0.092,0.241,0.2,0.043,0.222,0.022,0.428,0.186,27,4,59,1.347,0.013,0,None,24
+23,121,813,Jos Buttler,Rajasthan Royals / England,230.0,31,0.311,0.384,-0.074,0.223,-0.027,0.21,-0.173,0.472,0.218,28,3,80,0.31,0.001,0,CI includes 0; WPA < Median,25
+28,7,47,Virat Kohli,India / Royal Challengers Bengaluru,271.0,25,0.282,0.384,-0.103,0.205,-0.035,0.188,0.026,0.402,0.122,28,5,57,1.522,0.006,7,None,26
+27,21,2984,Sikandar Raza,Zimbabwe / Punjab Kings,149.0,16,0.309,0.2,0.109,0.185,0.014,0.192,-0.001,0.325,0.04,29,11,61,1.082,0.007,0,CI includes 0,27
+26,62,6272,William Jacks,England / Royal Challengers Bengaluru,91.0,15,0.297,-0.175,0.472,0.167,0.061,0.197,-0.126,0.436,0.158,30,4,75,0.673,0.007,0,CI includes 0,28
+30,3,3125,Nicholas Pooran,West Indies / Sunrisers Hyderabad,210.0,27,0.266,0.287,-0.021,0.192,-0.01,0.187,-0.047,0.409,0.122,31,5,67,1.309,0.006,0,CI includes 0,29
+29,142,7900,Tanzid Hasan,Bangladesh,109.0,12,0.341,0.359,-0.018,0.191,-0.008,0.187,-0.076,0.368,0.1,31,7,71,0.526,0.005,0,CI includes 0,30
+33,153,3605,Aiden Markram,Sunrisers Hyderabad / South Africa,137.0,26,0.227,0.139,0.087,0.158,0.017,0.167,-0.054,0.344,0.068,33,9,67,-0.567,-0.004,0,CI includes 0; WPA < Median,31
+31,54,796,Matthew Wade,Australia / Gujarat Titans,95.0,14,0.414,0.682,-0.268,0.189,-0.029,0.174,0.019,0.326,0.038,33,11,59,0.657,0.007,0,None,32
+36,53,22565,Muhammad Waseem,United Arab Emirates,92.0,12,0.321,1.016,-0.695,0.187,-0.066,0.154,0.004,0.291,0.024,34,14,61,1.234,0.013,0,None,33
+34,98,6819,Yashasvi Jaiswal,Rajasthan Royals / India,180.0,30,0.242,0.371,-0.129,0.183,-0.041,0.162,-0.015,0.329,0.052,35,10,63,3.974,0.022,2,CI includes 0,34
+32,47,6448,Ibrahim Zadran,Afghanistan,90.0,9,0.405,0.543,-0.137,0.183,-0.023,0.171,-0.051,0.323,0.044,35,11,68,-1.299,-0.014,0,CI includes 0; Matches < 12; WPA < Median,35
+35,68,152,Ravindra Jadeja,Chennai Super Kings / India,87.0,9,0.288,0.127,0.162,0.147,0.014,0.154,0.037,0.278,0.02,35,16,57,-1.55,-0.018,0,Matches < 12; WPA < Median,36
+38,84,3926,Rahul Tewatia,Gujarat Titans,103.0,18,0.214,-0.046,0.261,0.13,0.025,0.142,-0.157,0.397,0.102,38,6,80,0.725,0.007,4,CI includes 0,37
+37,127,2485,Babar Azam,Pakistan,86.0,14,0.216,0.251,-0.035,0.153,-0.012,0.147,-0.166,0.37,0.084,38,8,79,-0.387,-0.005,0,CI includes 0; WPA < Median,38
+41,64,6281,Abhishek Sharma,Sunrisers Hyderabad / India,256.0,38,0.187,0.305,-0.118,0.152,-0.041,0.131,-0.106,0.346,0.064,39,10,74,2.515,0.01,0,CI includes 0,39
+42,87,23450,Sai Sudharsan,Gujarat Titans / India,129.0,21,0.158,0.17,-0.012,0.135,-0.008,0.131,-0.009,0.26,0.002,40,19,63,1.18,0.009,0,CI includes 0,40
+40,16,4219,Krunal Pandya,Lucknow Super Giants / Royal Challengers Bengaluru,70.0,10,0.107,-0.419,0.526,0.105,0.06,0.135,-0.058,0.284,0.01,41,15,69,0.026,0.0,0,CI includes 0; Matches < 12; WPA < Median,41
+39,139,1440,Rahul Tripathi,Sunrisers Hyderabad / India,122.0,12,0.168,-0.065,0.233,0.126,0.028,0.14,-0.194,0.353,0.066,42,9,81,-0.158,-0.001,0,CI includes 0; WPA < Median,42
+48,95,7260,Dhruv Jurel,Rajasthan Royals / India,147.0,19,0.148,0.306,-0.158,0.12,-0.028,0.106,-0.119,0.338,0.06,42,9,77,-0.851,-0.006,0,CI includes 0; WPA < Median,43
+44,89,6460,Ayush Badoni,Lucknow Super Giants / India A,61.0,12,0.059,-0.487,0.545,0.093,0.057,0.121,-0.112,0.286,0.014,42,15,76,-0.839,-0.014,0,CI includes 0; WPA < Median,44
+45,61,3916,Jitesh Sharma,Punjab Kings / India,101.0,14,0.087,-0.204,0.291,0.1,0.028,0.113,-0.064,0.272,0.012,42,18,69,0.651,0.006,0,CI includes 0,45
+43,144,3280,Nazmul Hossain Shanto,Bangladesh,77.0,8,0.207,0.162,0.045,0.128,-0.001,0.128,-0.141,0.247,0.002,42,20,78,-0.344,-0.004,0,CI includes 0; Matches < 12; WPA < Median,46
+47,4,4260,Heinrich Klaasen,South Africa / Sunrisers Hyderabad,84.0,13,0.138,0.215,-0.077,0.117,-0.019,0.107,-0.06,0.256,0.012,44,20,69,1.309,0.016,0,CI includes 0,47
+46,146,2877,Vijay Shankar,Gujarat Titans / Chennai Super Kings,74.0,8,0.159,0.204,-0.045,0.117,-0.009,0.113,-0.087,0.217,0.0,44,24,72,-0.813,-0.011,0,CI includes 0; Matches < 12; WPA < Median,48
+49,78,7901,Parvez Emon,Bangladesh / Bangladesh A,85.0,9,0.049,-0.116,0.166,0.087,0.016,0.095,-0.022,0.228,0.0,47,21,66,-0.23,-0.003,0,CI includes 0; Matches < 12; WPA < Median,49
+53,73,3700,Tim Seifert,Delhi Capitals / New Zealand,60.0,9,0.156,0.731,-0.575,0.121,-0.09,0.076,-0.133,0.314,0.036,48,12,77,1.035,0.017,0,CI includes 0; Matches < 12,50
+54,20,2876,Axar Patel,India / Delhi Capitals,148.0,25,-0.047,-0.332,0.285,0.051,0.045,0.074,-0.227,0.338,0.056,49,10,82,-1.55,-0.01,0,CI includes 0; WPA < Median,51
+50,71,4117,Ishan Kishan,India / Mumbai Indians,204.0,37,0.039,-0.141,0.18,0.063,0.057,0.091,-0.177,0.327,0.054,49,10,79,1.229,0.006,0,CI includes 0,52
+52,137,25213,Dewald Brevis,Mumbai Indians / South Africa,62.0,8,-0.109,-0.981,0.873,0.042,0.07,0.077,-0.089,0.231,0.006,49,23,72,-0.259,-0.004,0,CI includes 0; Matches < 12; WPA < Median,53
+58,26,4854,Rachin Ravindra,New Zealand / Chennai Super Kings,62.0,10,-0.048,-0.15,0.102,0.059,0.009,0.063,-0.135,0.226,0.002,49,24,77,0.302,0.005,0,CI includes 0; Matches < 12,54
+56,39,2921,Fakhar Zaman,Pakistan,69.0,11,-0.041,-0.405,0.365,0.054,0.035,0.071,-0.067,0.204,0.0,49,26,69,0.395,0.006,0,CI includes 0; Matches < 12,55
+51,31,4409,Sam Curran,England / Punjab Kings,72.0,12,-0.116,-0.875,0.76,0.033,0.101,0.083,-0.076,0.268,0.028,50,17,71,0.032,0.0,12,CI includes 0; WPA < Median,56
+55,116,2367,Travis Head,Australia / Sunrisers Hyderabad,125.0,25,0.104,0.49,-0.386,0.104,-0.065,0.072,-0.105,0.252,0.0,50,19,76,0.602,0.005,0,CI includes 0,57
+57,148,2101,Quinton de Kock,Lucknow Super Giants / South Africa,122.0,23,0.059,0.175,-0.116,0.082,-0.032,0.066,-0.186,0.302,0.034,53,13,80,-0.036,-0.0,0,CI includes 0; WPA < Median,58
+64,34,2436,Dasun Shanaka,Sri Lanka / Gujarat Titans,105.0,13,-0.132,0.129,-0.26,0.045,-0.034,0.028,-0.246,0.292,0.018,54,14,83,0.652,0.006,0,CI includes 0,59
+63,131,20702,Tristan Stubbs,Mumbai Indians / South Africa,126.0,20,0.032,0.442,-0.411,0.078,-0.081,0.037,-0.177,0.236,0.002,55,22,80,-1.997,-0.016,0,CI includes 0; WPA < Median,60
+60,129,2671,Liton Das,Bangladesh / Kolkata Knight Riders,122.0,20,-0.024,0.024,-0.048,0.055,-0.014,0.048,-0.178,0.204,0.002,56,26,81,-0.459,-0.004,0,CI includes 0; WPA < Median,61
+59,100,6423,Riyan Parag,Rajasthan Royals / India,92.0,16,-0.05,-0.08,0.03,0.056,-0.001,0.055,-0.088,0.164,0.0,56,33,73,-0.571,-0.006,0,CI includes 0; WPA < Median,62
+62,112,1481,Kusal Perera,Sri Lanka,70.0,11,-0.145,-0.069,-0.076,0.045,-0.012,0.039,-0.225,0.276,0.022,57,17,83,-0.466,-0.007,0,CI includes 0; Matches < 12; WPA < Median,63
+61,111,220,David Warner,Delhi Capitals / Australia,94.0,15,0.031,0.226,-0.195,0.068,-0.053,0.041,-0.162,0.225,0.006,57,24,79,0.768,0.008,0,CI includes 0,64
+66,118,3954,Andrew Balbirnie,Ireland,108.0,14,-0.075,0.289,-0.365,0.026,-0.056,-0.002,-0.14,0.147,0.0,62,35,78,-0.507,-0.005,0,CI includes 0; WPA < Median,65
+67,117,1596,Moeen Ali,England / Chennai Super Kings,77.0,8,-0.284,-0.212,-0.072,0.002,-0.013,-0.005,-0.234,0.168,0.0,64,32,83,-0.456,-0.006,0,CI includes 0; Matches < 12; WPA < Median,66
+65,145,2639,Marcus Stoinis,Australia / Lucknow Super Giants,80.0,17,-0.006,0.594,-0.599,0.063,-0.125,0.0,-0.278,0.301,0.036,65,14,85,-0.777,-0.01,0,CI includes 0; WPA < Median,67
+73,33,126,Rohit Sharma,India / Mumbai Indians,156.0,31,-0.188,-0.326,0.138,-0.063,0.034,-0.046,-0.291,0.187,0.0,65,31,85,-0.25,-0.002,0,CI includes 0; WPA < Median,68
+72,138,2258,Sanju Samson,Rajasthan Royals / India,157.0,29,-0.077,0.229,-0.307,0.006,-0.088,-0.038,-0.319,0.221,0.002,66,25,86,-0.403,-0.003,0,CI includes 0; WPA < Median,69
+68,140,5928,Prithvi Shaw,Delhi Capitals / India,61.0,12,-0.377,0.012,-0.389,-0.008,-0.04,-0.028,-0.2,0.079,0.0,66,48,81,-0.481,-0.008,0,CI includes 0; WPA < Median,70
+70,66,6314,Devdutt Padikkal,Rajasthan Royals / Lucknow Super Giants,63.0,11,-0.272,-0.478,0.206,-0.046,0.028,-0.032,-0.257,0.181,0.0,66,32,84,-1.092,-0.017,0,CI includes 0; Matches < 12; WPA < Median,71
+69,132,4703,Rishabh Pant,India / Delhi Capitals,70.0,11,-0.204,0.277,-0.481,0.012,-0.08,-0.028,-0.314,0.161,0.0,66,35,86,-0.122,-0.002,0,CI includes 0; Matches < 12; WPA < Median,72
+71,113,2463,Ryan Burl,Zimbabwe,62.0,8,-0.369,0.309,-0.678,0.007,-0.078,-0.032,-0.195,0.108,0.0,67,43,81,-0.738,-0.012,0,CI includes 0; Matches < 12; WPA < Median,73
+74,102,167,Ajinkya Rahane,Kolkata Knight Riders / Chennai Super Kings,89.0,13,-0.232,-0.263,0.03,-0.048,0.001,-0.047,-0.19,0.117,0.002,68,42,82,-0.045,-0.001,0,CI includes 0; WPA < Median,74
+77,120,4755,Shivam Dube,Chennai Super Kings / India,74.0,19,-0.172,0.578,-0.75,-0.006,-0.166,-0.088,-0.331,0.163,0.002,71,34,86,-0.07,-0.001,0,CI includes 0; WPA < Median,75
+75,162,4986,Rovman Powell,West Indies / Delhi Capitals,127.0,28,-0.251,0.157,-0.408,-0.036,-0.098,-0.085,-0.432,0.21,0.004,72,27,87,0.559,0.004,0,CI includes 0,76
+76,119,2416,Kyle Mayers,West Indies / Lucknow Super Giants,70.0,15,-0.469,-0.675,0.206,-0.098,0.021,-0.088,-0.309,0.119,0.0,73,42,86,0.117,0.002,0,CI includes 0,77
+78,134,6674,Rahmanullah Gurbaz,Gujarat Titans / Afghanistan,72.0,17,-0.356,-0.079,-0.276,-0.08,-0.052,-0.105,-0.234,0.015,0.0,74,60,84,-1.05,-0.015,0,CI includes 0; WPA < Median,78
+79,149,4246,Nitish Rana,Kolkata Knight Riders / Rajasthan Royals,66.0,11,-0.441,-0.088,-0.353,-0.086,-0.063,-0.117,-0.285,0.06,0.0,75,55,85,-1.225,-0.019,0,CI includes 0; Matches < 12; WPA < Median,79
+80,143,953,Lokesh Rahul,India / Lucknow Super Giants,241.0,25,-0.237,0.068,-0.305,-0.084,-0.086,-0.127,-0.354,0.12,0.002,76,42,87,-0.296,-0.001,0,CI includes 0; WPA < Median,80
+81,126,24017,Brian Bennett,Zimbabwe,85.0,18,-0.467,0.054,-0.521,-0.095,-0.07,-0.13,-0.346,0.063,0.0,76,52,86,-0.162,-0.002,0,CI includes 0; WPA < Median,81
+83,114,88,Faf du Plessis,Royal Challengers Bengaluru / Delhi Capitals,95.0,16,-0.325,0.445,-0.77,-0.079,-0.142,-0.151,-0.266,0.002,0.0,78,61,85,-0.418,-0.004,0,CI includes 0; WPA < Median,82
+84,154,6726,Romario Shepherd,West Indies / Sunrisers Hyderabad,60.0,11,-1.138,0.356,-1.494,-0.094,-0.139,-0.164,-0.37,0.046,0.0,79,54,87,-1.22,-0.02,0,CI includes 0; Matches < 12; WPA < Median,83
+85,169,4391,Liam Livingstone,England / Punjab Kings,80.0,13,-0.506,0.587,-1.092,-0.082,-0.17,-0.167,-0.511,0.114,0.0,79,45,87,-0.036,-0.0,0,CI includes 0; WPA < Median,84
+86,163,8600,Tadiwanashe Marumani,Zimbabwe,62.0,11,-0.909,-0.611,-0.298,-0.163,-0.033,-0.18,-0.295,-0.071,0.0,80,71,86,-0.979,-0.016,0,CI includes 0; Matches < 12; WPA < Median,85
+82,155,3639,Brandon King,West Indies,86.0,20,-0.332,0.239,-0.571,-0.082,-0.119,-0.141,-0.406,0.091,0.0,80,47,87,-0.699,-0.008,0,CI includes 0; WPA < Median,86
+87,101,3297,Shimron Hetmyer,Rajasthan Royals / West Indies,85.0,18,-0.686,0.096,-0.782,-0.142,-0.139,-0.212,-0.481,0.015,0.0,83,58,87,-0.382,-0.004,0,CI includes 0; WPA < Median,87

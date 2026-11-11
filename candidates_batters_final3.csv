@@ -1,0 +1,22 @@
+player_id,name,team,v4_rank,rating,ci_low,ci_high,grid_18,in_restricted,drop_one_rank,hp_balls,hp_matches,wpa_per_hp_ball,pass_count,pass_count_old,median_rank
+3647,Shreyas Iyer,India / Kolkata Knight Riders,3,0.362,0.185,0.596,16,Y,12,161,18,0.013,4,4,8
+1699,Suryakumar Yadav,India / Mumbai Indians,2,0.362,0.156,0.517,12,Y,12,300,25,0.012,4,4,8
+8101,Ashutosh Sharma,Punjab Kings / Delhi Capitals,1,0.384,0.134,0.624,18,Y,17,92,10,0.029,3,4,6
+6931,Pathum Nissanka,Sri Lanka / Delhi Capitals,5,0.341,0.141,0.568,18,N,14,255,26,0.014,3,3,10
+6288,Shubman Gill,Gujarat Titans / India,4,0.347,0.051,0.61,16,Y,39,223,28,0.009,3,3,10
+3024,Mohammad Rizwan,Pakistan,7,0.315,0.162,0.45,12,N,13,190,16,0.003,3,3,12
+7897,Namboori Tilak Varma,Mumbai Indians / India,6,0.319,0.025,0.528,4,Y,27,353,31,0.004,2,2,11
+818,Mitchell Marsh,Delhi Capitals / Australia,9,0.302,0.121,0.481,7,Y,17,189,35,0.004,2,3,13
+6396,Tim David,Mumbai Indians / Australia,8,0.304,0.054,0.561,5,Y,25,130,25,0.017,2,2,13
+2573,Evin Lewis,Lucknow Super Giants / West Indies,10,0.294,0.051,0.487,12,N,34,67,8,0.006,2,2,14
+1077,David Miller,Gujarat Titans / South Africa,12,0.286,0.028,0.53,14,N,17,169,23,0.003,2,3,15
+5553,Phil Salt,England / Delhi Capitals,16,0.248,0.007,0.459,0,Y,38,183,29,0.016,2,2,20
+7216,Prabhsimran Singh,Punjab Kings / India A,15,0.252,0.087,0.442,6,N,25,84,18,0.014,1,1,18
+768,Reeza Hendricks,South Africa,13,0.267,0.075,0.421,0,N,25,83,13,0.012,1,1,18
+4823,Washington Sundar,India / Sunrisers Hyderabad,18,0.228,0.082,0.382,5,N,30,91,10,0.011,1,1,23
+4708,Rinku Singh,Kolkata Knight Riders / India,19,0.224,0.027,0.425,0,N,30,70,15,0.003,1,1,23
+5939,Cameron Green,Australia / Mumbai Indians,20,0.222,0.022,0.428,0,N,36,106,17,0.013,1,1,27
+4409,Sam Curran,England / Punjab Kings,51,0.083,-0.076,0.268,12,N,64,72,12,0.0,1,1,50
+838,Glenn Maxwell,Australia / Royal Challengers Bengaluru,11,0.294,-0.066,0.491,3,N,36,101,10,0.021,0,0,16
+6651,Towhid Hridoy,Bangladesh / Bangladesh A,14,0.259,-0.027,0.47,2,N,30,123,16,0.007,0,0,19
+3672,Kusal Mendis,Sri Lanka / Gujarat Titans,17,0.246,-0.076,0.446,0,N,59,171,21,0.004,0,0,22
