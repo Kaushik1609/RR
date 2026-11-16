@@ -335,6 +335,29 @@ Rank | Bowler Selection       | Player ID | Team Representation                 
 
 ---
 
+## 5.5 Strategic Auction Intelligence: Uncapped Stars & High-Value Targets
+
+Beyond locked franchise marquee retentions, IPL auction strategy hinges on acquiring high-leverage situational execution at efficient purse valuations. We separate top auction prospects into two high-priority target groups:
+
+### 1. Premier Uncapped & Emerging Domestic Targets
+*Players without senior Indian caps who exhibit statistically robust performance under extreme chase leverage:*
+1. **Ashutosh Sharma (PBKS/DC, ID 8101)** — *#1 Rated Batter (+0.384 r/b, Pass Count 3/4)*: The single highest rate producer under pressure in the 2022–2026 cycle. Maintained a remarkable $+0.0290$ WPA per ball in death chases across 10 matches. Qualified in 18/18 sensitivity grid models.
+2. **Harpreet Brar (PBKS, ID 7325)** — *#4 Rated Bowler (+0.279 r/b, Pass Count 3/4)*: Elite left-arm orthodox squeeze bowler with 18/18 grid consensus across 121 HP deliveries. Consistently constricts top-order batters during high-leverage middle overs with an elite $+0.0120$ WPA/ball.
+3. **Mohsin Khan (LSG, ID 6669)** — *Left-Arm Pace Specialist (+0.396 r/b, 77 HP deliveries)*: Devastating yorker and back-of-the-hand slower ball execution defending tight totals (12 matches), yielding high run-suppression metrics.
+4. **Shashank Singh (PBKS, ID 2756)** — *Middle-Order Finisher (+1.809 r/b un-shrunk, 34 HP deliveries)*: Exceptional situational strike rate in late-over chases, proving decisive in high required run-rate turnarounds across 8 pressure matches.
+5. **Rahul Tewatia (GT, ID 3926)** — *Designated Closer (+0.550 r/b, 107 HP deliveries)*: Established clutch chase reputation validated across 18 matches with reliable boundary conversion when required run-rate exceeds 12.0.
+
+### 2. High-Value Overseas & Value-Picks Under Pressure
+*International match-winners offering elite situational performance without commanding marquee retention slots:*
+1. **Taskin Ahmed (BAN, ID 2681)** — *#1 Rated Bowler (+0.359 r/b, Pass Count 4/4)*: One of only three bowlers to achieve a perfect 4/4 stability screen pass. High pace, hard lengths, and exceptional $+0.128$ bootstrap lower CI bound.
+2. **Obed McCoy (RR/WI, ID 4837)** — *#2 Rated Bowler (+0.367 r/b, Pass Count 4/4)*: Familiar Rajasthan Royals death specialist. Extreme cutter variations make him virtually unhittable in high-pressure 19th/20th overs (18/18 grid consensus).
+3. **Jacob Duffy (NZ/RCB, ID 22920)** — *#3 Rated Bowler (+0.288 r/b, Pass Count 4/4)*: Unheralded swing and hard-length seamer with 18/18 grid consensus and zero vulnerability to match dropouts.
+4. **Kamindu Mendis (SL, ID 4904)** — *Ambidextrous All-Rounder (+0.433 r/b restricted rating, 98 HP deliveries)*: Topped the restricted benchmark list among all batters; offers middle-overs tempo control and ambidextrous bowling utility.
+5. **Phil Salt (ENG/DC, ID 5553)** — *Wicketkeeper-Aggressor (+0.248 r/b, 183 HP deliveries)*: Ultra-aggressive Powerplay pressure batter with $+0.0160$ WPA per ball, breaking chases open before fielding restrictions relax.
+6. **Mitchell Santner (NZ/CSK, ID 4101)** — *Finger-Spin Controller (+0.167 r/b, $+0.0202$ WPA/ball)*: Boasts the highest single-ball win-probability added among all evaluated spinners, conceding virtually zero loose deliveries in pressure overs.
+
+---
+
 ## 6. Methodological Limitations & Empirical Audits
 
 1. **Weak Baseline Wicket Models (OOF ROC-AUC $\approx 0.58–0.60$)**:
