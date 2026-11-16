@@ -556,38 +556,38 @@ Because raw split-half correlations in T20 pressure situations hover near zero (
 <p><strong>Definitive Ranking Rule</strong>:<br />
 Candidates in each role are ranked primarily by <strong>Pass Count</strong> (descending, out of 4). Ties in pass count are broken by <strong>Bootstrap Median Rank</strong> (ascending), followed by <strong>Bootstrap 90% CI Lower Bound</strong> (descending).</p>
 <div class="codehilite"><pre><span></span><code>===================================================================================================================================================
-DEFINITIVE UNSTOP SELECTIONS: TOP 10 BATTERS UNDER PRESSURE (STABILITY-SCREENED, DROP-ONE &lt;= 15)
+DEFINITIVE UNSTOP SELECTIONS: TOP 10 BATTERS UNDER PRESSURE (EXCLUDING MARQUEE / RETAINED ASSETS)
 ===================================================================================================================================================
 Rank | Batter Selection       | Player ID | Team Representation                   | Rating (r/b) | 90% Bootstrap CI | Pass Count | Median Rank
 -----+------------------------+-----------+---------------------------------------+--------------+------------------+------------+------------
-  1  | Shreyas Iyer           | 3647      | India / Kolkata Knight Riders         |   +0.362     | [+0.185, +0.596] |    4 / 4   |     #8
-  2  | Suryakumar Yadav       | 1699      | India / Mumbai Indians                |   +0.362     | [+0.156, +0.517] |    4 / 4   |     #8
-  3  | Ashutosh Sharma        | 8101      | Punjab Kings / Delhi Capitals         |   +0.384     | [+0.134, +0.624] |    3 / 4   |     #6
-  4  | Pathum Nissanka        | 6931      | Sri Lanka / Delhi Capitals            |   +0.341     | [+0.141, +0.568] |    3 / 4   |    #10
-  5  | Shubman Gill           | 6288      | Gujarat Titans / India                |   +0.347     | [+0.051, +0.610] |    3 / 4   |    #10
-  6  | Mohammad Rizwan        | 3024      | Pakistan                              |   +0.315     | [+0.162, +0.450] |    3 / 4   |    #12
-  7  | Namboori Tilak Varma   | 7897      | Mumbai Indians / India                |   +0.319     | [+0.025, +0.528] |    2 / 4   |    #11
-  8  | Mitchell Marsh         | 818       | Delhi Capitals / Australia            |   +0.302     | [+0.121, +0.481] |    2 / 4   |    #13
-  9  | Tim David              | 6396      | Mumbai Indians / Australia            |   +0.304     | [+0.054, +0.561] |    2 / 4   |    #13
- 10  | Evin Lewis             | 2573      | Lucknow Super Giants / West Indies    |   +0.294     | [+0.051, +0.487] |    2 / 4   |    #14
+  1  | Ashutosh Sharma        | 8101      | Punjab Kings / Delhi Capitals         |   +0.384     | [+0.134, +0.624] |    3 / 4   |     #6
+  2  | Pathum Nissanka        | 6931      | Sri Lanka / Delhi Capitals            |   +0.341     | [+0.141, +0.568] |    3 / 4   |    #10
+  3  | Tim David              | 6396      | Mumbai Indians / Australia            |   +0.304     | [+0.054, +0.561] |    2 / 4   |    #13
+  4  | Mitchell Marsh         | 818       | Delhi Capitals / Australia            |   +0.302     | [+0.121, +0.481] |    2 / 4   |    #13
+  5  | Evin Lewis             | 2573      | Lucknow Super Giants / West Indies    |   +0.294     | [+0.051, +0.487] |    2 / 4   |    #14
+  6  | David Miller           | 1077      | Gujarat Titans / South Africa         |   +0.286     | [+0.028, +0.530] |    2 / 4   |    #15
+  7  | Phil Salt              | 5553      | England / Delhi Capitals              |   +0.248     | [+0.007, +0.459] |    2 / 4   |    #20
+  8  | Reeza Hendricks        | 768       | South Africa                          |   +0.267     | [+0.075, +0.421] |    1 / 4   |    #18
+  9  | Prabhsimran Singh      | 7216      | Punjab Kings / India A                |   +0.252     | [+0.087, +0.442] |    1 / 4   |    #18
+ 10  | Washington Sundar      | 4823      | India / Sunrisers Hyderabad           |   +0.228     | [+0.082, +0.382] |    1 / 4   |    #23
 ===================================================================================================================================================
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>===================================================================================================================================================
-DEFINITIVE UNSTOP SELECTIONS: TOP 10 BOWLERS UNDER PRESSURE (STABILITY-SCREENED &amp; BATTING ORDER ADJUSTED)
+DEFINITIVE UNSTOP SELECTIONS: TOP 10 BOWLERS UNDER PRESSURE (EXCLUDING MARQUEE / RETAINED ASSETS)
 ===================================================================================================================================================
 Rank | Bowler Selection       | Player ID | Team Representation                   | Rating (r/b) | 90% Bootstrap CI | Pass Count | Median Rank
 -----+------------------------+-----------+---------------------------------------+--------------+------------------+------------+------------
   1  | Taskin Ahmed           | 2681      | Bangladesh                            |   +0.359     | [+0.128, +0.590] |    4 / 4   |     #6
   2  | Obed McCoy             | 4837      | Rajasthan Royals / West Indies        |   +0.367     | [+0.018, +0.638] |    4 / 4   |     #7
   3  | Jacob Duffy            | 22920     | New Zealand / Royal Challengers B.    |   +0.288     | [+0.036, +0.562] |    4 / 4   |    #10
-  4  | Harshit Rana           | 29888     | Kolkata Knight Riders / India         |   +0.279     | [+0.045, +0.520] |    3 / 4   |    #12
-  5  | Harpreet Brar          | 7325      | Punjab Kings                          |   +0.279     | [+0.005, +0.594] |    3 / 4   |    #12
-  6  | Gudakesh Motie         | 3276      | West Indies                           |   +0.235     | [+0.010, +0.461] |    3 / 4   |    #17
-  7  | Josh Hazlewood         | 830       | Australia / Royal Challengers B.      |   +0.343     | [-0.048, +0.709] |    2 / 4   |     #9
-  8  | Dasun Shanaka          | 2436      | Sri Lanka / Gujarat Titans            |   +0.242     | [-0.011, +0.471] |    1 / 4   |    #14
-  9  | Shaheen Afridi         | 6355      | Pakistan                              |   +0.217     | [+0.053, +0.402] |    1 / 4   |    #17
- 10  | Mohammad Nawaz         | 2490      | Pakistan                              |   +0.188     | [+0.029, +0.388] |    1 / 4   |    #19
+  4  | Harpreet Brar          | 7325      | Punjab Kings                          |   +0.279     | [+0.005, +0.594] |    3 / 4   |    #12
+  5  | Gudakesh Motie         | 3276      | West Indies                           |   +0.235     | [+0.010, +0.461] |    3 / 4   |    #17
+  6  | Dasun Shanaka          | 2436      | Sri Lanka / Gujarat Titans            |   +0.242     | [-0.011, +0.471] |    1 / 4   |    #14
+  7  | Mohammad Nawaz         | 2490      | Pakistan                              |   +0.188     | [+0.029, +0.388] |    1 / 4   |    #19
+  8  | Mitchell Santner       | 4101      | Chennai Super Kings / New Zealand     |   +0.167     | [+0.042, +0.322] |    1 / 4   |    #23
+  9  | Mustafizur Rahman      | 4373      | Delhi Capitals / Bangladesh           |   +0.263     | [-0.063, +0.503] |    0 / 4   |    #12
+ 10  | Yuzvendra Chahal       | 1612      | India / Rajasthan Royals              |   +0.255     | [-0.096, +0.580] |    0 / 4   |    #15
 ===================================================================================================================================================
 </code></pre></div>
 

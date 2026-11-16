@@ -28,19 +28,22 @@
   <!-- Header Banner -->
   <header class="max-w-7xl mx-auto mb-6 pb-4 border-b border-[var(--card-border,rgba(255,255,255,0.1))] flex flex-col md:flex-row md:items-center justify-between gap-4">
     <div>
-      <div class="flex items-center gap-2 mb-1">
+      <div class="flex items-center gap-2 mb-1 flex-wrap">
         <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">
           Rajasthan Royals • SupeRR Selector Season 2
         </span>
         <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
           IPL & T20I (2022–2026)
         </span>
+        <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+          Auction / Non-Retained Realistic Filter Active
+        </span>
       </div>
       <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--foreground,#f8fafc)]">
         Situational Pressure Performance Intelligence
       </h1>
       <p class="text-xs md:text-sm text-[var(--muted-foreground,#94a3b8)] mt-1">
-        Empirical Bayes Shrinkage, Match-Cluster Bootstrapping & 4-Point Stability Screening under Chase Leverage
+        Empirical Bayes Shrinkage, Match-Cluster Bootstrapping & 4-Point Stability Screening (Excluding Untradeable Core)
       </p>
     </div>
 
@@ -89,10 +92,10 @@
       </div>
 
       <div class="bg-[var(--card,#1e293b)] p-4 rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] shadow-sm flex flex-col justify-between">
-        <span class="text-xs font-medium text-[var(--muted-foreground,#94a3b8)]">Stability Filter Overlap</span>
-        <div id="kpi-overlap" class="text-2xl font-black tracking-tight text-pink-400 mt-1">7 / 10 (70%)</div>
+        <span class="text-xs font-medium text-[var(--muted-foreground,#94a3b8)]">Excluded Marquee Core</span>
+        <div id="kpi-overlap" class="text-2xl font-black tracking-tight text-pink-400 mt-1">10 Players</div>
         <span class="text-[11px] text-purple-400 mt-2 font-mono">
-          Restricted IPL + Major T20I benchmark
+          Filtered franchise anchors
         </span>
       </div>
     </section>
@@ -106,7 +109,7 @@
           <div class="flex items-center justify-between mb-3 pb-2 border-b border-[var(--card-border,rgba(255,255,255,0.06))]">
             <div>
               <h2 id="table-title" class="text-base font-bold text-[var(--foreground,#f8fafc)] flex items-center gap-2">
-                <span>🏏</span> Final Top 10 Batters (Stability-Screened)
+                <span>🏏</span> Top 10 Batters (Excluding Marquee Retained Assets)
               </h2>
               <p class="text-xs text-[var(--muted-foreground,#94a3b8)]">
                 Ranked by Pass Count, then EB Rating (+r/b vs match situation). Click player to inspect.
@@ -139,7 +142,7 @@
 
         <div class="mt-4 pt-3 border-t border-[var(--card-border,rgba(255,255,255,0.06))] flex items-center justify-between text-[11px] text-[var(--muted-foreground,#94a3b8)]">
           <span>* Ratings shrunk with Empirical Bayes (&lambda; = 0.5)</span>
-          <span class="font-mono text-emerald-400">Green = Top Tier (Pass Count 4/4)</span>
+          <span class="font-mono text-emerald-400">Green = Top Tier (Pass Count 3-4/4)</span>
         </div>
       </div>
 
@@ -152,16 +155,16 @@
                 Rank #1
               </span>
               <h3 id="player-name-display" class="text-xl font-extrabold text-[var(--foreground,#f8fafc)] mt-1.5">
-                Shreyas Iyer
+                Ashutosh Sharma
               </h3>
               <p id="player-team-display" class="text-xs text-[var(--muted-foreground,#94a3b8)]">
-                India / Kolkata Knight Riders (ID: 3647)
+                Punjab Kings / Delhi Capitals (ID: 8101)
               </p>
             </div>
             <div class="text-right">
               <span class="text-xs text-[var(--muted-foreground,#94a3b8)] block">Empirical Bayes Rating</span>
               <span id="player-rating-display" class="text-2xl font-black text-emerald-400 font-mono">
-                +0.362 <span class="text-xs font-normal text-[var(--muted-foreground,#94a3b8)]">r/b</span>
+                +0.384 <span class="text-xs font-normal text-[var(--muted-foreground,#94a3b8)]">r/b</span>
               </span>
             </div>
           </div>
@@ -174,11 +177,11 @@
             <div class="grid grid-cols-2 gap-2 text-xs">
               <div id="screen-ci" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
                 <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">1. 90% Cluster CI Low &gt; 0</span>
-                <span id="screen-ci-val" class="font-bold text-emerald-400 font-mono text-sm">+0.185 (PASS)</span>
+                <span id="screen-ci-val" class="font-bold text-emerald-400 font-mono text-sm">+0.134 (PASS)</span>
               </div>
               <div id="screen-grid" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
                 <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">2. Grid Robustness (≥9/18)</span>
-                <span id="screen-grid-val" class="font-bold text-emerald-400 font-mono text-sm">16 / 18 (PASS)</span>
+                <span id="screen-grid-val" class="font-bold text-emerald-400 font-mono text-sm">18 / 18 (PASS)</span>
               </div>
               <div id="screen-restr" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
                 <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">3. Restricted List Quality</span>
@@ -186,7 +189,7 @@
               </div>
               <div id="screen-drop" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
                 <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">4. Drop-One Sensitivity (≤15)</span>
-                <span id="screen-drop-val" class="font-bold text-emerald-400 font-mono text-sm">#12 (PASS)</span>
+                <span id="screen-drop-val" class="font-bold text-rose-400 font-mono text-sm">#17 (FAIL)</span>
               </div>
             </div>
           </div>
@@ -195,17 +198,17 @@
           <div class="mt-4 pt-3 border-t border-[var(--card-border,rgba(255,255,255,0.06))] grid grid-cols-3 gap-2 text-center text-xs">
             <div class="p-2 rounded-xl bg-[var(--background,#0f172a)]">
               <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">HP Volume</span>
-              <span id="player-hp-balls" class="font-bold font-mono text-[var(--foreground,#f8fafc)]">161 balls</span>
-              <span id="player-hp-matches" class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">18 matches</span>
+              <span id="player-hp-balls" class="font-bold font-mono text-[var(--foreground,#f8fafc)]">92 balls</span>
+              <span id="player-hp-matches" class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">10 matches</span>
             </div>
             <div class="p-2 rounded-xl bg-[var(--background,#0f172a)]">
               <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">WPA Impact</span>
-              <span id="player-wpa" class="font-bold font-mono text-emerald-400">+0.0130</span>
+              <span id="player-wpa" class="font-bold font-mono text-emerald-400">+0.0290</span>
               <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">per HP ball</span>
             </div>
             <div class="p-2 rounded-xl bg-[var(--background,#0f172a)]">
               <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">Median Boot Rank</span>
-              <span id="player-med-rank" class="font-bold font-mono text-cyan-300">#8</span>
+              <span id="player-med-rank" class="font-bold font-mono text-cyan-300">#6</span>
               <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">500 clusters</span>
             </div>
           </div>
@@ -214,13 +217,13 @@
           <div class="mt-4">
             <div class="flex justify-between text-[11px] text-[var(--muted-foreground,#94a3b8)] mb-1">
               <span>Bootstrap 90% Spread (Cluster Resampled)</span>
-              <span id="ci-range-text" class="font-mono text-[var(--foreground,#f8fafc)]">[+0.185, +0.596]</span>
+              <span id="ci-range-text" class="font-mono text-[var(--foreground,#f8fafc)]">[+0.134, +0.624]</span>
             </div>
             <div class="relative w-full h-4 bg-[var(--background,#0f172a)] rounded-full overflow-hidden border border-[var(--card-border,rgba(255,255,255,0.1))]">
               <!-- Zero line marker -->
               <div class="absolute top-0 bottom-0 left-[25%] w-0.5 bg-rose-500/80 z-10" title="Zero threshold"></div>
               <!-- Range bar -->
-              <div id="ci-bar" class="absolute top-1 bottom-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="left: 43%; width: 41%;"></div>
+              <div id="ci-bar" class="absolute top-1 bottom-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="left: 33.4%; width: 49%;"></div>
             </div>
             <div class="flex justify-between text-[10px] text-[var(--muted-foreground,#94a3b8)] mt-1 font-mono">
               <span>-0.20</span>
@@ -232,7 +235,7 @@
         </div>
 
         <div id="player-notes" class="mt-4 p-2.5 rounded-xl bg-slate-900/40 border border-slate-700/40 text-[11px] text-[var(--muted-foreground,#94a3b8)] leading-relaxed">
-          Robust across all 4 screening filters. Maintains positive value regardless of match drop or condition variation.
+          Highest raw rate rating (+0.384 r/b). Drop-one rank #17 (Match 40726 dependence), qualified in 18/18 grid models.
         </div>
       </div>
     </section>
@@ -257,6 +260,9 @@
           </span>
           <span class="flex items-center gap-1.5 text-amber-400">
             <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Pass Count 1-2/4
+          </span>
+          <span class="flex items-center gap-1.5 text-rose-400">
+            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span> Pass Count 0/4
           </span>
         </div>
       </div>
@@ -307,31 +313,31 @@
   </footer>
 
   <script>
-    // DATA STORE
+    // DATA STORE: Excluding Marquee Retained Assets
     const BATTERS = [
-      { rank: 1, id: 3647, name: "Shreyas Iyer", team: "India / Kolkata Knight Riders", rating: 0.362, ci_low: 0.185, ci_high: 0.596, grid: 16, restr: "Y", drop_rank: 12, hp_balls: 161, hp_matches: 18, wpa: 0.013, pass_count: 4, med_rank: 8, note: "Peak reliability under chase pressure. 4/4 stability screen pass, elite middle-overs and death spin/pace hitting." },
-      { rank: 2, id: 1699, name: "Suryakumar Yadav", team: "India / Mumbai Indians", rating: 0.362, ci_low: 0.156, ci_high: 0.517, grid: 12, restr: "Y", drop_rank: 12, hp_balls: 300, hp_matches: 25, wpa: 0.012, pass_count: 4, med_rank: 8, note: "Highest volume sample (300 HP balls) among elite batters with pristine 4/4 stability pass." },
-      { rank: 3, id: 8101, name: "Ashutosh Sharma", team: "Punjab Kings / Delhi Capitals", rating: 0.384, ci_low: 0.134, ci_high: 0.624, grid: 18, restr: "Y", drop_rank: 17, hp_balls: 92, hp_matches: 10, wpa: 0.029, pass_count: 3, med_rank: 6, note: "Highest raw rate rating (+0.384 r/b). Drop-one rank #17 (Match 40726 dependence), qualified in 18/18 grid models." },
-      { rank: 4, id: 6931, name: "Pathum Nissanka", team: "Sri Lanka / Delhi Capitals", rating: 0.341, ci_low: 0.141, ci_high: 0.568, grid: 18, restr: "N", drop_rank: 14, hp_balls: 255, hp_matches: 26, wpa: 0.014, pass_count: 3, med_rank: 10, note: "Exceptional anchor-to-accelerator conversion across 26 high-pressure chases." },
-      { rank: 5, id: 6288, name: "Shubman Gill", team: "Gujarat Titans / India", rating: 0.347, ci_low: 0.051, ci_high: 0.610, grid: 16, restr: "Y", drop_rank: 39, hp_balls: 223, hp_matches: 28, wpa: 0.009, pass_count: 3, med_rank: 10, note: "Prolific run accumulator. High drop-one sensitivity (#39 without Match 20250) but solid overall volume." },
-      { rank: 6, id: 3024, name: "Mohammad Rizwan", team: "Pakistan", rating: 0.315, ci_low: 0.162, ci_high: 0.450, grid: 12, restr: "N", drop_rank: 13, hp_balls: 190, hp_matches: 16, wpa: 0.003, pass_count: 3, med_rank: 12, note: "Tightest confidence interval spread among high-volume openers, consistently preserving wickets." },
-      { rank: 7, id: 7897, name: "Namboori Tilak Varma", team: "Mumbai Indians / India", rating: 0.319, ci_low: 0.025, ci_high: 0.528, grid: 4, restr: "Y", drop_rank: 27, hp_balls: 353, hp_matches: 31, wpa: 0.004, pass_count: 2, med_rank: 11, note: "Largest situational pressure sample (353 HP balls), providing continuous innings stabilization." },
-      { rank: 8, id: 818, name: "Mitchell Marsh", team: "Delhi Capitals / Australia", rating: 0.302, ci_low: 0.121, ci_high: 0.481, grid: 7, restr: "Y", drop_rank: 17, hp_balls: 189, hp_matches: 35, wpa: 0.004, pass_count: 2, med_rank: 13, note: "Aggressive boundary hunter in early and middle chase phases across 35 high-pressure matches." },
-      { rank: 9, id: 6396, name: "Tim David", team: "Mumbai Indians / Australia", rating: 0.304, ci_low: 0.054, ci_high: 0.561, grid: 5, restr: "Y", drop_rank: 25, hp_balls: 130, hp_matches: 25, wpa: 0.017, pass_count: 2, med_rank: 13, note: "High WPA per ball (+0.017) specialist, driving late-innings chase finishes." },
-      { rank: 10, id: 2573, name: "Evin Lewis", team: "Lucknow Super Giants / West Indies", rating: 0.294, ci_low: 0.051, ci_high: 0.487, grid: 12, restr: "N", drop_rank: 34, hp_balls: 67, hp_matches: 8, wpa: 0.006, pass_count: 2, med_rank: 14, note: "Edged David Miller on median bootstrap rank tiebreaker (#14 vs #15). Qualifies with exactly 8 matches." }
+      { rank: 1, id: 8101, name: "Ashutosh Sharma", team: "Punjab Kings / Delhi Capitals", rating: 0.384, ci_low: 0.134, ci_high: 0.624, grid: 18, restr: "Y", drop_rank: 17, hp_balls: 92, hp_matches: 10, wpa: 0.029, pass_count: 3, med_rank: 6, note: "Highest raw rate rating (+0.384 r/b). Qualified in 18/18 grid models; high-impact lower-order accelerator." },
+      { rank: 2, id: 6931, name: "Pathum Nissanka", team: "Sri Lanka / Delhi Capitals", rating: 0.341, ci_low: 0.141, ci_high: 0.568, grid: 18, restr: "N", drop_rank: 14, hp_balls: 255, hp_matches: 26, wpa: 0.014, pass_count: 3, med_rank: 10, note: "Exceptional anchor-to-accelerator conversion across 26 high-pressure chases." },
+      { rank: 3, id: 6396, name: "Tim David", team: "Mumbai Indians / Australia", rating: 0.304, ci_low: 0.054, ci_high: 0.561, grid: 5, restr: "Y", drop_rank: 25, hp_balls: 130, hp_matches: 25, wpa: 0.017, pass_count: 2, med_rank: 13, note: "High WPA per ball (+0.017) specialist, driving late-innings chase finishes." },
+      { rank: 4, id: 818, name: "Mitchell Marsh", team: "Delhi Capitals / Australia", rating: 0.302, ci_low: 0.121, ci_high: 0.481, grid: 7, restr: "Y", drop_rank: 17, hp_balls: 189, hp_matches: 35, wpa: 0.004, pass_count: 2, med_rank: 13, note: "Aggressive boundary hunter in early and middle chase phases across 35 high-pressure matches." },
+      { rank: 5, id: 2573, name: "Evin Lewis", team: "Lucknow Super Giants / West Indies", rating: 0.294, ci_low: 0.051, ci_high: 0.487, grid: 12, restr: "N", drop_rank: 34, hp_balls: 67, hp_matches: 8, wpa: 0.006, pass_count: 2, med_rank: 14, note: "Powerplay destructor under chase leverage. Qualifies with 8 high-pressure matches." },
+      { rank: 6, id: 1077, name: "David Miller", team: "Gujarat Titans / South Africa", rating: 0.286, ci_low: 0.028, ci_high: 0.530, grid: 14, restr: "N", drop_rank: 17, hp_balls: 169, hp_matches: 23, wpa: 0.003, pass_count: 2, med_rank: 15, note: "Proven death-overs finisher with 14/18 grid stability and strong situational composure." },
+      { rank: 7, id: 5553, name: "Phil Salt", team: "England / Delhi Capitals", rating: 0.248, ci_low: 0.007, ci_high: 0.459, grid: 0, restr: "Y", drop_rank: 38, hp_balls: 183, hp_matches: 29, wpa: 0.016, pass_count: 2, med_rank: 20, note: "Explosive top-order aggressor with high win-probability contributions in tight chases." },
+      { rank: 8, id: 768, name: "Reeza Hendricks", team: "South Africa", rating: 0.267, ci_low: 0.075, ci_high: 0.421, grid: 0, restr: "N", drop_rank: 25, hp_balls: 83, hp_matches: 13, wpa: 0.012, pass_count: 1, med_rank: 18, note: "Reliable top-order accumulation with consistent positive bootstrap lower bound (+0.075)." },
+      { rank: 9, id: 7216, name: "Prabhsimran Singh", team: "Punjab Kings / India A", rating: 0.252, ci_low: 0.087, ci_high: 0.442, grid: 6, restr: "N", drop_rank: 25, hp_balls: 84, hp_matches: 18, wpa: 0.014, pass_count: 1, med_rank: 18, note: "Young Indian wicketkeeper-batter with high-tempo scoring in powerplay chases." },
+      { rank: 10, id: 4823, name: "Washington Sundar", team: "India / Sunrisers Hyderabad", rating: 0.228, ci_low: 0.082, ci_high: 0.382, grid: 5, restr: "N", drop_rank: 30, hp_balls: 91, hp_matches: 10, wpa: 0.011, pass_count: 1, med_rank: 23, note: "Composed lower-order contributor with robust positive confidence interval (+0.082)." }
     ];
 
     const BOWLERS = [
       { rank: 1, id: 2681, name: "Taskin Ahmed", team: "Bangladesh", rating: 0.359, ci_low: 0.128, ci_high: 0.590, grid: 18, restr: "Y", drop_rank: 7, hp_balls: 95, hp_matches: 12, wpa: 0.0053, pass_count: 4, med_rank: 6, note: "Clean 4/4 stability pass. Dominant pace wicket-taking and run suppression in high-leverage defense." },
       { rank: 2, id: 4837, name: "Obed McCoy", team: "Rajasthan Royals / West Indies", rating: 0.367, ci_low: 0.018, ci_high: 0.638, grid: 18, restr: "Y", drop_rank: 9, hp_balls: 99, hp_matches: 12, wpa: 0.0031, pass_count: 4, med_rank: 7, note: "Rajasthan Royals death overs anchor. High-variance cutters and yorkers, passing all 4 stability filters." },
       { rank: 3, id: 22920, name: "Jacob Duffy", team: "New Zealand / Royal Challengers Bengaluru", rating: 0.288, ci_low: 0.036, ci_high: 0.562, grid: 18, restr: "Y", drop_rank: 15, hp_balls: 79, hp_matches: 15, wpa: 0.0078, pass_count: 4, med_rank: 10, note: "Pristine 4/4 screen pass with 18/18 grid consensus and strong positive bootstrap bound." },
-      { rank: 4, id: 29888, name: "Harshit Rana", team: "Kolkata Knight Riders / India", rating: 0.279, ci_low: 0.045, ci_high: 0.520, grid: 12, restr: "Y", drop_rank: 26, hp_balls: 95, hp_matches: 10, wpa: 0.0073, pass_count: 3, med_rank: 12, note: "Adjusted for 20.0% tail-ender exposure in baselines; retains formidable +0.279 r/b net rating." },
-      { rank: 5, id: 7325, name: "Harpreet Brar", team: "Punjab Kings", rating: 0.279, ci_low: 0.005, ci_high: 0.594, grid: 18, restr: "Y", drop_rank: 21, hp_balls: 121, hp_matches: 11, wpa: 0.0120, pass_count: 3, med_rank: 12, note: "Elite middle-overs run-constriction against elite top-order batters (18/18 grid consensus)." },
-      { rank: 6, id: 3276, name: "Gudakesh Motie", team: "West Indies", rating: 0.235, ci_low: 0.010, ci_high: 0.461, grid: 10, restr: "Y", drop_rank: 30, hp_balls: 85, hp_matches: 12, wpa: 0.0076, pass_count: 3, med_rank: 17, note: "Left-arm orthodox pressure control, maintaining low boundary rates in pressure overs." },
-      { rank: 7, id: 830, name: "Josh Hazlewood", team: "Australia / Royal Challengers Bengaluru", rating: 0.343, ci_low: -0.048, ci_high: 0.709, grid: 18, restr: "Y", drop_rank: 21, hp_balls: 152, hp_matches: 21, wpa: 0.0171, pass_count: 2, med_rank: 9, note: "Faced elite top-order batters (mean order 3.27, only 2% tailenders). Bootstrap CI includes 0." },
-      { rank: 8, id: 2436, name: "Dasun Shanaka", team: "Sri Lanka / Gujarat Titans", rating: 0.242, ci_low: -0.011, ci_high: 0.471, grid: 3, restr: "Y", drop_rank: 24, hp_balls: 74, hp_matches: 12, wpa: 0.0071, pass_count: 1, med_rank: 14, note: "Niche situational seamer delivering timely breakthroughs in middle squeeze overs." },
-      { rank: 9, id: 6355, name: "Shaheen Afridi", team: "Pakistan", rating: 0.217, ci_low: 0.053, ci_high: 0.402, grid: 6, restr: "N", drop_rank: 21, hp_balls: 118, hp_matches: 20, wpa: -0.0011, pass_count: 1, med_rank: 17, note: "High volume front-line spearhead. Shows slightly negative WPA per HP ball (-0.0011)." },
-      { rank: 10, id: 2490, name: "Mohammad Nawaz", team: "Pakistan", rating: 0.188, ci_low: 0.029, ci_high: 0.388, grid: 6, restr: "N", drop_rank: 23, hp_balls: 125, hp_matches: 15, wpa: 0.0154, pass_count: 1, med_rank: 19, note: "High WPA impact (+0.0154/ball). Earned spot via pre-set pass count rule." }
+      { rank: 4, id: 7325, name: "Harpreet Brar", team: "Punjab Kings", rating: 0.279, ci_low: 0.005, ci_high: 0.594, grid: 18, restr: "Y", drop_rank: 21, hp_balls: 121, hp_matches: 11, wpa: 0.0120, pass_count: 3, med_rank: 12, note: "Elite middle-overs run-constriction against elite top-order batters (18/18 grid consensus)." },
+      { rank: 5, id: 3276, name: "Gudakesh Motie", team: "West Indies", rating: 0.235, ci_low: 0.010, ci_high: 0.461, grid: 10, restr: "Y", drop_rank: 30, hp_balls: 85, hp_matches: 12, wpa: 0.0076, pass_count: 3, med_rank: 17, note: "Left-arm orthodox pressure control, maintaining low boundary rates in pressure overs." },
+      { rank: 6, id: 2436, name: "Dasun Shanaka", team: "Sri Lanka / Gujarat Titans", rating: 0.242, ci_low: -0.011, ci_high: 0.471, grid: 3, restr: "Y", drop_rank: 24, hp_balls: 74, hp_matches: 12, wpa: 0.0071, pass_count: 1, med_rank: 14, note: "Niche situational seamer delivering timely breakthroughs in middle squeeze overs." },
+      { rank: 7, id: 2490, name: "Mohammad Nawaz", team: "Pakistan", rating: 0.188, ci_low: 0.029, ci_high: 0.388, grid: 6, restr: "N", drop_rank: 23, hp_balls: 125, hp_matches: 15, wpa: 0.0154, pass_count: 1, med_rank: 19, note: "High WPA impact (+0.0154/ball). Tight stump-to-stump left-arm spin in pressure chases." },
+      { rank: 8, id: 4101, name: "Mitchell Santner", team: "Chennai Super Kings / New Zealand", rating: 0.167, ci_low: 0.042, ci_high: 0.322, grid: 4, restr: "N", drop_rank: 21, hp_balls: 135, hp_matches: 19, wpa: 0.0202, pass_count: 1, med_rank: 23, note: "World-class economy rate in powerplays and middle overs with positive CI (+0.042)." },
+      { rank: 9, id: 4373, name: "Mustafizur Rahman", team: "Delhi Capitals / Bangladesh", rating: 0.263, ci_low: -0.063, ci_high: 0.503, grid: 6, restr: "N", drop_rank: 26, hp_balls: 144, hp_matches: 19, wpa: 0.0016, pass_count: 0, med_rank: 12, note: "Proven left-arm cutter specialist with extensive death-overs workload (144 HP deliveries)." },
+      { rank: 10, id: 1612, name: "Yuzvendra Chahal", team: "India / Rajasthan Royals", rating: 0.255, ci_low: -0.096, ci_high: 0.580, grid: 3, restr: "N", drop_rank: 30, hp_balls: 208, hp_matches: 28, wpa: 0.0137, pass_count: 0, med_rank: 15, note: "Highest volume leg-spinner (208 HP balls), aggressive attacking wicket-taker under pressure." }
     ];
 
     let currentRole = 'batters';
@@ -351,10 +357,8 @@
         : "px-4 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-150 text-[var(--muted-foreground,#94a3b8)] hover:text-white flex items-center gap-1.5";
 
       document.getElementById('table-title').innerHTML = isBat 
-        ? `<span>🏏</span> Final Top 10 Batters (Stability-Screened)` 
-        : `<span>🎯</span> Final Top 10 Bowlers (Stability-Screened)`;
-
-      document.getElementById('kpi-overlap').textContent = isBat ? "7 / 10 (70%)" : "8 / 10 (80%)";
+        ? `<span>🏏</span> Top 10 Batters (Excluding Marquee Retained Assets)` 
+        : `<span>🎯</span> Top 10 Bowlers (Excluding Marquee Retained Assets)`;
 
       selectedPlayer = isBat ? BATTERS[0] : BOWLERS[0];
       renderTable();
@@ -380,7 +384,8 @@
 
         const passBadgeClass = p.pass_count === 4 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
           : p.pass_count === 3 ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
-          : 'bg-amber-500/20 text-amber-300 border border-amber-500/30';
+          : p.pass_count > 0 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+          : 'bg-rose-500/20 text-rose-300 border border-rose-500/30';
 
         tr.innerHTML = `
           <td class="py-2.5 px-2 font-mono text-[var(--muted-foreground,#94a3b8)]">${p.rank}</td>
@@ -388,7 +393,7 @@
             <div class="font-medium text-xs">${p.name}</div>
             <div class="text-[10px] text-[var(--muted-foreground,#94a3b8)] truncate max-w-[150px]">${p.team}</div>
           </td>
-          <td class="py-2.5 px-2 text-right font-mono font-bold ${p.rating > 0.35 ? 'text-emerald-400' : 'text-cyan-400'}">
+          <td class="py-2.5 px-2 text-right font-mono font-bold ${p.rating > 0.30 ? 'text-emerald-400' : 'text-cyan-400'}">
             +${p.rating.toFixed(3)}
           </td>
           <td class="py-2.5 px-2 text-center">
@@ -479,8 +484,8 @@
 
       const data = currentRole === 'batters' ? BATTERS : BOWLERS;
 
-      // X: HP Balls (0 to 380)
-      const minX = 0, maxX = 380;
+      // X: HP Balls (0 to 300)
+      const minX = 0, maxX = 300;
       // Y: Rating (+0.10 to +0.45)
       const minY = 0.15, maxY = 0.42;
 
@@ -507,7 +512,7 @@
 
       // X-axis ticks
       ctx.textAlign = "center";
-      for (let xVal = 50; xVal <= 350; xVal += 50) {
+      for (let xVal = 50; xVal <= 250; xVal += 50) {
         const xPx = getX(xVal);
         ctx.beginPath();
         ctx.moveTo(xPx, pad.top);
@@ -535,7 +540,7 @@
         const isSelected = p.id === selectedPlayer.id;
 
         // Color by pass count
-        let fillColor = p.pass_count === 4 ? "#10b981" : (p.pass_count === 3 ? "#06b6d4" : "#f59e0b");
+        let fillColor = p.pass_count === 4 ? "#10b981" : (p.pass_count === 3 ? "#06b6d4" : (p.pass_count > 0 ? "#f59e0b" : "#f43f5e"));
 
         // CI Vertical Error Bar
         const pyLow = getY(Math.max(minY, p.ci_low));
