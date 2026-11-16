@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SupeRR Selector 2.0 - Pressure Performance Dashboard</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.4; }
+    }
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background: rgba(150, 150, 150, 0.3);
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-[var(--background,#0f172a)] text-[var(--foreground,#f8fafc)] antialiased min-h-screen p-4 md:p-6 font-sans">
+
+  <!-- Header Banner -->
+  <header class="max-w-7xl mx-auto mb-6 pb-4 border-b border-[var(--card-border,rgba(255,255,255,0.1))] flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-pink-500/20 text-pink-400 border border-pink-500/30">
+          Rajasthan Royals • SupeRR Selector Season 2
+        </span>
+        <span class="px-2.5 py-0.5 text-xs font-medium rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+          IPL & T20I (2022–2026)
+        </span>
+      </div>
+      <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--foreground,#f8fafc)]">
+        Situational Pressure Performance Intelligence
+      </h1>
+      <p class="text-xs md:text-sm text-[var(--muted-foreground,#94a3b8)] mt-1">
+        Empirical Bayes Shrinkage, Match-Cluster Bootstrapping & 4-Point Stability Screening under Chase Leverage
+      </p>
+    </div>
+
+    <!-- Mode Selector & Controls -->
+    <div class="flex items-center gap-3 self-start md:self-auto">
+      <div class="bg-[var(--card,#1e293b)] p-1 rounded-xl border border-[var(--card-border,rgba(255,255,255,0.1))] flex items-center shadow-inner">
+        <button id="tab-batters" onclick="switchRole('batters')" class="px-4 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-150 bg-pink-600 text-white shadow-sm flex items-center gap-1.5">
+          <span>🏏</span> Batters (Top 10)
+        </button>
+        <button id="tab-bowlers" onclick="switchRole('bowlers')" class="px-4 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-150 text-[var(--muted-foreground,#94a3b8)] hover:text-white flex items-center gap-1.5">
+          <span>🎯</span> Bowlers (Top 10)
+        </button>
+      </div>
+      <button onclick="exportCSV()" class="px-3.5 py-2 text-xs font-semibold rounded-xl bg-[var(--card,#1e293b)] border border-[var(--card-border,rgba(255,255,255,0.1))] text-[var(--foreground,#f8fafc)] hover:bg-[var(--card-border,rgba(255,255,255,0.15))] transition flex items-center gap-1.5 shadow-sm">
+        <span>📥</span> Export Roster
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Key Metric KPI Strip -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-[var(--card,#1e293b)] p-4 rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] shadow-sm flex flex-col justify-between">
+        <span class="text-xs font-medium text-[var(--muted-foreground,#94a3b8)]">Total Regulation Matches</span>
+        <div class="text-2xl font-black tracking-tight text-[var(--foreground,#f8fafc)] mt-1">777</div>
+        <span class="text-[11px] text-emerald-400 mt-2 flex items-center gap-1 font-mono">
+          ✓ 100% chase-repaired (50.19% win rate)
+        </span>
+      </div>
+
+      <div class="bg-[var(--card,#1e293b)] p-4 rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] shadow-sm flex flex-col justify-between">
+        <span class="text-xs font-medium text-[var(--muted-foreground,#94a3b8)]">Deliveries Evaluated</span>
+        <div class="text-2xl font-black tracking-tight text-[var(--foreground,#f8fafc)] mt-1">200,999</div>
+        <span class="text-[11px] text-cyan-400 mt-2 font-mono">
+          37,171 High-Pressure balls ($P \ge 80\%$)
+        </span>
+      </div>
+
+      <div class="bg-[var(--card,#1e293b)] p-4 rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] shadow-sm flex flex-col justify-between">
+        <span class="text-xs font-medium text-[var(--muted-foreground,#94a3b8)]">Wicket Replacement Value</span>
+        <div class="text-2xl font-black tracking-tight text-amber-400 mt-1">W = 15.0 <span class="text-xs text-[var(--muted-foreground,#94a3b8)] font-normal">runs</span></div>
+        <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] mt-2 font-mono">
+          Sensitivity Grid: {10, 15, 20}
+        </span>
+      </div>
+
+      <div class="bg-[var(--card,#1e293b)] p-4 rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] shadow-sm flex flex-col justify-between">
+        <span class="text-xs font-medium text-[var(--muted-foreground,#94a3b8)]">Stability Filter Overlap</span>
+        <div id="kpi-overlap" class="text-2xl font-black tracking-tight text-pink-400 mt-1">7 / 10 (70%)</div>
+        <span class="text-[11px] text-purple-400 mt-2 font-mono">
+          Restricted IPL + Major T20I benchmark
+        </span>
+      </div>
+    </section>
+
+    <!-- Main Interactive Grid: Table + Detail Inspector -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Left: Roster Table (7 cols) -->
+      <div class="lg:col-span-7 bg-[var(--card,#1e293b)] rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] p-4 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-[var(--card-border,rgba(255,255,255,0.06))]">
+            <div>
+              <h2 id="table-title" class="text-base font-bold text-[var(--foreground,#f8fafc)] flex items-center gap-2">
+                <span>🏏</span> Final Top 10 Batters (Stability-Screened)
+              </h2>
+              <p class="text-xs text-[var(--muted-foreground,#94a3b8)]">
+                Ranked by Pass Count, then EB Rating (+r/b vs match situation). Click player to inspect.
+              </p>
+            </div>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-[var(--background,#0f172a)] text-[var(--muted-foreground,#94a3b8)] font-mono border border-[var(--card-border,rgba(255,255,255,0.1))]">
+              Drop-One ≤ 15
+            </span>
+          </div>
+
+          <div class="overflow-x-auto scrollbar-thin">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="text-[var(--muted-foreground,#94a3b8)] border-b border-[var(--card-border,rgba(255,255,255,0.1))] pb-2 font-semibold">
+                  <th class="py-2.5 px-2">#</th>
+                  <th class="py-2.5 px-2">Player</th>
+                  <th class="py-2.5 px-2 text-right">Rating (r/b)</th>
+                  <th class="py-2.5 px-2 text-center">Passes</th>
+                  <th class="py-2.5 px-2 text-center">90% CI</th>
+                  <th class="py-2.5 px-2 text-right">HP Balls</th>
+                  <th class="py-2.5 px-2 text-center">WPA/b</th>
+                </tr>
+              </thead>
+              <tbody id="player-table-body" class="divide-y divide-[var(--card-border,rgba(255,255,255,0.05))]">
+                <!-- Dynamically Populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-[var(--card-border,rgba(255,255,255,0.06))] flex items-center justify-between text-[11px] text-[var(--muted-foreground,#94a3b8)]">
+          <span>* Ratings shrunk with Empirical Bayes (&lambda; = 0.5)</span>
+          <span class="font-mono text-emerald-400">Green = Top Tier (Pass Count 4/4)</span>
+        </div>
+      </div>
+
+      <!-- Right: Deep-Dive Player Inspector Card (5 cols) -->
+      <div class="lg:col-span-5 bg-[var(--card,#1e293b)] rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] p-5 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-start justify-between pb-3 border-b border-[var(--card-border,rgba(255,255,255,0.06))]">
+            <div>
+              <span id="player-rank-badge" class="px-2 py-0.5 text-[11px] font-bold rounded-md bg-pink-500/20 text-pink-300 border border-pink-500/30">
+                Rank #1
+              </span>
+              <h3 id="player-name-display" class="text-xl font-extrabold text-[var(--foreground,#f8fafc)] mt-1.5">
+                Shreyas Iyer
+              </h3>
+              <p id="player-team-display" class="text-xs text-[var(--muted-foreground,#94a3b8)]">
+                India / Kolkata Knight Riders (ID: 3647)
+              </p>
+            </div>
+            <div class="text-right">
+              <span class="text-xs text-[var(--muted-foreground,#94a3b8)] block">Empirical Bayes Rating</span>
+              <span id="player-rating-display" class="text-2xl font-black text-emerald-400 font-mono">
+                +0.362 <span class="text-xs font-normal text-[var(--muted-foreground,#94a3b8)]">r/b</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Stability Diagnostic Matrix -->
+          <div class="mt-4">
+            <h4 class="text-xs font-bold text-[var(--muted-foreground,#94a3b8)] uppercase tracking-wider mb-2">
+              4-Point Stability Screen Diagnostic
+            </h4>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div id="screen-ci" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
+                <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">1. 90% Cluster CI Low &gt; 0</span>
+                <span id="screen-ci-val" class="font-bold text-emerald-400 font-mono text-sm">+0.185 (PASS)</span>
+              </div>
+              <div id="screen-grid" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
+                <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">2. Grid Robustness (≥9/18)</span>
+                <span id="screen-grid-val" class="font-bold text-emerald-400 font-mono text-sm">16 / 18 (PASS)</span>
+              </div>
+              <div id="screen-restr" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
+                <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">3. Restricted List Quality</span>
+                <span id="screen-restr-val" class="font-bold text-emerald-400 font-mono text-sm">In Top 10 (PASS)</span>
+              </div>
+              <div id="screen-drop" class="p-2.5 rounded-xl bg-[var(--background,#0f172a)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
+                <span class="text-[11px] text-[var(--muted-foreground,#94a3b8)] block">4. Drop-One Sensitivity (≤15)</span>
+                <span id="screen-drop-val" class="font-bold text-emerald-400 font-mono text-sm">#12 (PASS)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Volume & Context Stats -->
+          <div class="mt-4 pt-3 border-t border-[var(--card-border,rgba(255,255,255,0.06))] grid grid-cols-3 gap-2 text-center text-xs">
+            <div class="p-2 rounded-xl bg-[var(--background,#0f172a)]">
+              <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">HP Volume</span>
+              <span id="player-hp-balls" class="font-bold font-mono text-[var(--foreground,#f8fafc)]">161 balls</span>
+              <span id="player-hp-matches" class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">18 matches</span>
+            </div>
+            <div class="p-2 rounded-xl bg-[var(--background,#0f172a)]">
+              <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">WPA Impact</span>
+              <span id="player-wpa" class="font-bold font-mono text-emerald-400">+0.0130</span>
+              <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">per HP ball</span>
+            </div>
+            <div class="p-2 rounded-xl bg-[var(--background,#0f172a)]">
+              <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">Median Boot Rank</span>
+              <span id="player-med-rank" class="font-bold font-mono text-cyan-300">#8</span>
+              <span class="text-[10px] text-[var(--muted-foreground,#94a3b8)] block">500 clusters</span>
+            </div>
+          </div>
+
+          <!-- Confidence Interval Bar Visualizer -->
+          <div class="mt-4">
+            <div class="flex justify-between text-[11px] text-[var(--muted-foreground,#94a3b8)] mb-1">
+              <span>Bootstrap 90% Spread (Cluster Resampled)</span>
+              <span id="ci-range-text" class="font-mono text-[var(--foreground,#f8fafc)]">[+0.185, +0.596]</span>
+            </div>
+            <div class="relative w-full h-4 bg-[var(--background,#0f172a)] rounded-full overflow-hidden border border-[var(--card-border,rgba(255,255,255,0.1))]">
+              <!-- Zero line marker -->
+              <div class="absolute top-0 bottom-0 left-[25%] w-0.5 bg-rose-500/80 z-10" title="Zero threshold"></div>
+              <!-- Range bar -->
+              <div id="ci-bar" class="absolute top-1 bottom-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full" style="left: 43%; width: 41%;"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-[var(--muted-foreground,#94a3b8)] mt-1 font-mono">
+              <span>-0.20</span>
+              <span class="text-rose-400">0.00</span>
+              <span>+0.40</span>
+              <span>+0.80</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="player-notes" class="mt-4 p-2.5 rounded-xl bg-slate-900/40 border border-slate-700/40 text-[11px] text-[var(--muted-foreground,#94a3b8)] leading-relaxed">
+          Robust across all 4 screening filters. Maintains positive value regardless of match drop or condition variation.
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Analytics: Interactive Scatter Matrix Canvas -->
+    <section class="bg-[var(--card,#1e293b)] rounded-2xl border border-[var(--card-border,rgba(255,255,255,0.08))] p-5 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4 pb-3 border-b border-[var(--card-border,rgba(255,255,255,0.06))]">
+        <div>
+          <h3 class="text-base font-bold text-[var(--foreground,#f8fafc)] flex items-center gap-2">
+            <span>📊</span> Pressure Performance Landscape: Net Rating vs Exposure Volume
+          </h3>
+          <p class="text-xs text-[var(--muted-foreground,#94a3b8)]">
+            Quadrant analysis contrasting rate performance (+r/b) against situational exposure (High-Pressure Deliveries).
+          </p>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-mono">
+          <span class="flex items-center gap-1.5 text-emerald-400">
+            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span> Pass Count 4/4
+          </span>
+          <span class="flex items-center gap-1.5 text-cyan-400">
+            <span class="w-3 h-3 rounded-full bg-cyan-500 inline-block"></span> Pass Count 3/4
+          </span>
+          <span class="flex items-center gap-1.5 text-amber-400">
+            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Pass Count 1-2/4
+          </span>
+        </div>
+      </div>
+
+      <!-- Canvas Scatter Plot -->
+      <div class="w-full h-80 relative">
+        <canvas id="scatterCanvas" class="w-full h-full block cursor-crosshair"></canvas>
+      </div>
+      <div class="mt-2 text-center text-[11px] text-[var(--muted-foreground,#94a3b8)] font-mono">
+        Hover over dots to reveal candidate pressure statistics and cluster confidence intervals.
+      </div>
+    </section>
+
+    <!-- Methodology & Mathematical Rigor Explanatory Notes -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+      <div class="p-4 rounded-2xl bg-[var(--card,#1e293b)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
+        <div class="text-pink-400 font-bold mb-1 flex items-center gap-1">
+          <span>📐</span> Empirical Bayes Shrinkage
+        </div>
+        <p class="text-[var(--muted-foreground,#94a3b8)] leading-relaxed">
+          T20 situations suffer from high sample noise. We pull raw per-ball net residual effects toward zero (E[&mu;]=0) using player exposure variance &sigma;<sub>i</sub><sup>2</sup> = &sigma;<sub>e</sub><sup>2</sup>/n<sub>i</sub>, preventing small-sample outliers from skewing rankings.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-[var(--card,#1e293b)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
+        <div class="text-cyan-400 font-bold mb-1 flex items-center gap-1">
+          <span>🛡️</span> 4-Point Stability Screen
+        </div>
+        <p class="text-[var(--muted-foreground,#94a3b8)] leading-relaxed">
+          Every candidate is subjected to: (1) Cluster bootstrap CI low &gt; 0, (2) Sensitivity grid stability (&ge; 9/18 configs), (3) Top-10 in restricted elite competitions, and (4) Drop-one match resilience (&le; 15).
+        </p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-[var(--card,#1e293b)] border border-[var(--card-border,rgba(255,255,255,0.08))]">
+        <div class="text-amber-400 font-bold mb-1 flex items-center gap-1">
+          <span>🎯</span> Batting Order Adjustment
+        </div>
+        <p class="text-[var(--muted-foreground,#94a3b8)] leading-relaxed">
+          Bowler baselines incorporate opposition batting order buckets (1–3, 4–6, 7+). This removes artificial inflation from dismissing tail-enders in dying overs and accurately credits top-order death over specialists.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="max-w-7xl mx-auto mt-8 pt-4 border-t border-[var(--card-border,rgba(255,255,255,0.1))] text-center text-xs text-[var(--muted-foreground,#94a3b8)]">
+    Rajasthan Royals Analytics Challenge • SupeRR Selector Season 2 • Production Release Artifact
+  </footer>
+
+  <script>
+    // DATA STORE
+    const BATTERS = [
+      { rank: 1, id: 3647, name: "Shreyas Iyer", team: "India / Kolkata Knight Riders", rating: 0.362, ci_low: 0.185, ci_high: 0.596, grid: 16, restr: "Y", drop_rank: 12, hp_balls: 161, hp_matches: 18, wpa: 0.013, pass_count: 4, med_rank: 8, note: "Peak reliability under chase pressure. 4/4 stability screen pass, elite middle-overs and death spin/pace hitting." },
+      { rank: 2, id: 1699, name: "Suryakumar Yadav", team: "India / Mumbai Indians", rating: 0.362, ci_low: 0.156, ci_high: 0.517, grid: 12, restr: "Y", drop_rank: 12, hp_balls: 300, hp_matches: 25, wpa: 0.012, pass_count: 4, med_rank: 8, note: "Highest volume sample (300 HP balls) among elite batters with pristine 4/4 stability pass." },
+      { rank: 3, id: 8101, name: "Ashutosh Sharma", team: "Punjab Kings / Delhi Capitals", rating: 0.384, ci_low: 0.134, ci_high: 0.624, grid: 18, restr: "Y", drop_rank: 17, hp_balls: 92, hp_matches: 10, wpa: 0.029, pass_count: 3, med_rank: 6, note: "Highest raw rate rating (+0.384 r/b). Drop-one rank #17 (Match 40726 dependence), qualified in 18/18 grid models." },
+      { rank: 4, id: 6931, name: "Pathum Nissanka", team: "Sri Lanka / Delhi Capitals", rating: 0.341, ci_low: 0.141, ci_high: 0.568, grid: 18, restr: "N", drop_rank: 14, hp_balls: 255, hp_matches: 26, wpa: 0.014, pass_count: 3, med_rank: 10, note: "Exceptional anchor-to-accelerator conversion across 26 high-pressure chases." },
+      { rank: 5, id: 6288, name: "Shubman Gill", team: "Gujarat Titans / India", rating: 0.347, ci_low: 0.051, ci_high: 0.610, grid: 16, restr: "Y", drop_rank: 39, hp_balls: 223, hp_matches: 28, wpa: 0.009, pass_count: 3, med_rank: 10, note: "Prolific run accumulator. High drop-one sensitivity (#39 without Match 20250) but solid overall volume." },
+      { rank: 6, id: 3024, name: "Mohammad Rizwan", team: "Pakistan", rating: 0.315, ci_low: 0.162, ci_high: 0.450, grid: 12, restr: "N", drop_rank: 13, hp_balls: 190, hp_matches: 16, wpa: 0.003, pass_count: 3, med_rank: 12, note: "Tightest confidence interval spread among high-volume openers, consistently preserving wickets." },
+      { rank: 7, id: 7897, name: "Namboori Tilak Varma", team: "Mumbai Indians / India", rating: 0.319, ci_low: 0.025, ci_high: 0.528, grid: 4, restr: "Y", drop_rank: 27, hp_balls: 353, hp_matches: 31, wpa: 0.004, pass_count: 2, med_rank: 11, note: "Largest situational pressure sample (353 HP balls), providing continuous innings stabilization." },
+      { rank: 8, id: 818, name: "Mitchell Marsh", team: "Delhi Capitals / Australia", rating: 0.302, ci_low: 0.121, ci_high: 0.481, grid: 7, restr: "Y", drop_rank: 17, hp_balls: 189, hp_matches: 35, wpa: 0.004, pass_count: 2, med_rank: 13, note: "Aggressive boundary hunter in early and middle chase phases across 35 high-pressure matches." },
+      { rank: 9, id: 6396, name: "Tim David", team: "Mumbai Indians / Australia", rating: 0.304, ci_low: 0.054, ci_high: 0.561, grid: 5, restr: "Y", drop_rank: 25, hp_balls: 130, hp_matches: 25, wpa: 0.017, pass_count: 2, med_rank: 13, note: "High WPA per ball (+0.017) specialist, driving late-innings chase finishes." },
+      { rank: 10, id: 2573, name: "Evin Lewis", team: "Lucknow Super Giants / West Indies", rating: 0.294, ci_low: 0.051, ci_high: 0.487, grid: 12, restr: "N", drop_rank: 34, hp_balls: 67, hp_matches: 8, wpa: 0.006, pass_count: 2, med_rank: 14, note: "Edged David Miller on median bootstrap rank tiebreaker (#14 vs #15). Qualifies with exactly 8 matches." }
+    ];
+
+    const BOWLERS = [
+      { rank: 1, id: 2681, name: "Taskin Ahmed", team: "Bangladesh", rating: 0.359, ci_low: 0.128, ci_high: 0.590, grid: 18, restr: "Y", drop_rank: 7, hp_balls: 95, hp_matches: 12, wpa: 0.0053, pass_count: 4, med_rank: 6, note: "Clean 4/4 stability pass. Dominant pace wicket-taking and run suppression in high-leverage defense." },
+      { rank: 2, id: 4837, name: "Obed McCoy", team: "Rajasthan Royals / West Indies", rating: 0.367, ci_low: 0.018, ci_high: 0.638, grid: 18, restr: "Y", drop_rank: 9, hp_balls: 99, hp_matches: 12, wpa: 0.0031, pass_count: 4, med_rank: 7, note: "Rajasthan Royals death overs anchor. High-variance cutters and yorkers, passing all 4 stability filters." },
+      { rank: 3, id: 22920, name: "Jacob Duffy", team: "New Zealand / Royal Challengers Bengaluru", rating: 0.288, ci_low: 0.036, ci_high: 0.562, grid: 18, restr: "Y", drop_rank: 15, hp_balls: 79, hp_matches: 15, wpa: 0.0078, pass_count: 4, med_rank: 10, note: "Pristine 4/4 screen pass with 18/18 grid consensus and strong positive bootstrap bound." },
+      { rank: 4, id: 29888, name: "Harshit Rana", team: "Kolkata Knight Riders / India", rating: 0.279, ci_low: 0.045, ci_high: 0.520, grid: 12, restr: "Y", drop_rank: 26, hp_balls: 95, hp_matches: 10, wpa: 0.0073, pass_count: 3, med_rank: 12, note: "Adjusted for 20.0% tail-ender exposure in baselines; retains formidable +0.279 r/b net rating." },
+      { rank: 5, id: 7325, name: "Harpreet Brar", team: "Punjab Kings", rating: 0.279, ci_low: 0.005, ci_high: 0.594, grid: 18, restr: "Y", drop_rank: 21, hp_balls: 121, hp_matches: 11, wpa: 0.0120, pass_count: 3, med_rank: 12, note: "Elite middle-overs run-constriction against elite top-order batters (18/18 grid consensus)." },
+      { rank: 6, id: 3276, name: "Gudakesh Motie", team: "West Indies", rating: 0.235, ci_low: 0.010, ci_high: 0.461, grid: 10, restr: "Y", drop_rank: 30, hp_balls: 85, hp_matches: 12, wpa: 0.0076, pass_count: 3, med_rank: 17, note: "Left-arm orthodox pressure control, maintaining low boundary rates in pressure overs." },
+      { rank: 7, id: 830, name: "Josh Hazlewood", team: "Australia / Royal Challengers Bengaluru", rating: 0.343, ci_low: -0.048, ci_high: 0.709, grid: 18, restr: "Y", drop_rank: 21, hp_balls: 152, hp_matches: 21, wpa: 0.0171, pass_count: 2, med_rank: 9, note: "Faced elite top-order batters (mean order 3.27, only 2% tailenders). Bootstrap CI includes 0." },
+      { rank: 8, id: 2436, name: "Dasun Shanaka", team: "Sri Lanka / Gujarat Titans", rating: 0.242, ci_low: -0.011, ci_high: 0.471, grid: 3, restr: "Y", drop_rank: 24, hp_balls: 74, hp_matches: 12, wpa: 0.0071, pass_count: 1, med_rank: 14, note: "Niche situational seamer delivering timely breakthroughs in middle squeeze overs." },
+      { rank: 9, id: 6355, name: "Shaheen Afridi", team: "Pakistan", rating: 0.217, ci_low: 0.053, ci_high: 0.402, grid: 6, restr: "N", drop_rank: 21, hp_balls: 118, hp_matches: 20, wpa: -0.0011, pass_count: 1, med_rank: 17, note: "High volume front-line spearhead. Shows slightly negative WPA per HP ball (-0.0011)." },
+      { rank: 10, id: 2490, name: "Mohammad Nawaz", team: "Pakistan", rating: 0.188, ci_low: 0.029, ci_high: 0.388, grid: 6, restr: "N", drop_rank: 23, hp_balls: 125, hp_matches: 15, wpa: 0.0154, pass_count: 1, med_rank: 19, note: "High WPA impact (+0.0154/ball). Earned spot via pre-set pass count rule." }
+    ];
+
+    let currentRole = 'batters';
+    let selectedPlayer = BATTERS[0];
+
+    function switchRole(role) {
+      currentRole = role;
+      const isBat = (role === 'batters');
+      
+      // Update Tab Styles
+      document.getElementById('tab-batters').className = isBat 
+        ? "px-4 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-150 bg-pink-600 text-white shadow-sm flex items-center gap-1.5"
+        : "px-4 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-150 text-[var(--muted-foreground,#94a3b8)] hover:text-white flex items-center gap-1.5";
+      
+      document.getElementById('tab-bowlers').className = !isBat 
+        ? "px-4 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-150 bg-pink-600 text-white shadow-sm flex items-center gap-1.5"
+        : "px-4 py-2 text-xs md:text-sm font-semibold rounded-lg transition-all duration-150 text-[var(--muted-foreground,#94a3b8)] hover:text-white flex items-center gap-1.5";
+
+      document.getElementById('table-title').innerHTML = isBat 
+        ? `<span>🏏</span> Final Top 10 Batters (Stability-Screened)` 
+        : `<span>🎯</span> Final Top 10 Bowlers (Stability-Screened)`;
+
+      document.getElementById('kpi-overlap').textContent = isBat ? "7 / 10 (70%)" : "8 / 10 (80%)";
+
+      selectedPlayer = isBat ? BATTERS[0] : BOWLERS[0];
+      renderTable();
+      renderInspector();
+      drawScatterPlot();
+    }
+
+    function renderTable() {
+      const data = currentRole === 'batters' ? BATTERS : BOWLERS;
+      const tbody = document.getElementById('player-table-body');
+      tbody.innerHTML = '';
+
+      data.forEach(p => {
+        const isSelected = p.id === selectedPlayer.id;
+        const tr = document.createElement('tr');
+        tr.className = `cursor-pointer transition-colors ${isSelected ? 'bg-pink-500/15 font-semibold text-white' : 'hover:bg-white/5 text-[var(--foreground,#f8fafc)]'}`;
+        tr.onclick = () => {
+          selectedPlayer = p;
+          renderTable();
+          renderInspector();
+          drawScatterPlot();
+        };
+
+        const passBadgeClass = p.pass_count === 4 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+          : p.pass_count === 3 ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
+          : 'bg-amber-500/20 text-amber-300 border border-amber-500/30';
+
+        tr.innerHTML = `
+          <td class="py-2.5 px-2 font-mono text-[var(--muted-foreground,#94a3b8)]">${p.rank}</td>
+          <td class="py-2.5 px-2">
+            <div class="font-medium text-xs">${p.name}</div>
+            <div class="text-[10px] text-[var(--muted-foreground,#94a3b8)] truncate max-w-[150px]">${p.team}</div>
+          </td>
+          <td class="py-2.5 px-2 text-right font-mono font-bold ${p.rating > 0.35 ? 'text-emerald-400' : 'text-cyan-400'}">
+            +${p.rating.toFixed(3)}
+          </td>
+          <td class="py-2.5 px-2 text-center">
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-mono ${passBadgeClass}">${p.pass_count}/4</span>
+          </td>
+          <td class="py-2.5 px-2 text-center font-mono text-[11px] text-[var(--muted-foreground,#94a3b8)]">
+            [${p.ci_low >= 0 ? '+' : ''}${p.ci_low.toFixed(3)}, +${p.ci_high.toFixed(3)}]
+          </td>
+          <td class="py-2.5 px-2 text-right font-mono text-xs">${p.hp_balls}</td>
+          <td class="py-2.5 px-2 text-center font-mono text-[11px] ${p.wpa >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
+            ${p.wpa >= 0 ? '+' : ''}${p.wpa.toFixed(4)}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function renderInspector() {
+      const p = selectedPlayer;
+      document.getElementById('player-rank-badge').textContent = `Rank #${p.rank}`;
+      document.getElementById('player-name-display').textContent = p.name;
+      document.getElementById('player-team-display').textContent = `${p.team} (ID: ${p.id})`;
+      document.getElementById('player-rating-display').innerHTML = `+${p.rating.toFixed(3)} <span class="text-xs font-normal text-[var(--muted-foreground,#94a3b8)]">r/b</span>`;
+
+      // 4-Point Screen Diagnostics
+      const ciPass = p.ci_low > 0;
+      document.getElementById('screen-ci-val').textContent = `${ciPass ? '+' : ''}${p.ci_low.toFixed(3)} (${ciPass ? 'PASS' : 'FAIL'})`;
+      document.getElementById('screen-ci-val').className = `font-bold font-mono text-sm ${ciPass ? 'text-emerald-400' : 'text-rose-400'}`;
+
+      const gridPass = p.grid >= 9;
+      document.getElementById('screen-grid-val').textContent = `${p.grid} / 18 (${gridPass ? 'PASS' : 'FAIL'})`;
+      document.getElementById('screen-grid-val').className = `font-bold font-mono text-sm ${gridPass ? 'text-emerald-400' : 'text-amber-400'}`;
+
+      const restrPass = p.restr === 'Y';
+      document.getElementById('screen-restr-val').textContent = `${restrPass ? 'In Top 10 (PASS)' : 'Outside Top 10 (FAIL)'}`;
+      document.getElementById('screen-restr-val').className = `font-bold font-mono text-sm ${restrPass ? 'text-emerald-400' : 'text-amber-400'}`;
+
+      const dropPass = p.drop_rank <= 15;
+      document.getElementById('screen-drop-val').textContent = `#${p.drop_rank} (${dropPass ? 'PASS' : 'FAIL'})`;
+      document.getElementById('screen-drop-val').className = `font-bold font-mono text-sm ${dropPass ? 'text-emerald-400' : 'text-rose-400'}`;
+
+      // Numbers
+      document.getElementById('player-hp-balls').textContent = `${p.hp_balls} balls`;
+      document.getElementById('player-hp-matches').textContent = `${p.hp_matches} matches`;
+      document.getElementById('player-wpa').textContent = `${p.wpa >= 0 ? '+' : ''}${p.wpa.toFixed(4)}`;
+      document.getElementById('player-wpa').className = `font-bold font-mono ${p.wpa >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+      document.getElementById('player-med-rank').textContent = `#${p.med_rank}`;
+
+      // CI Bar Calculation (-0.20 to +0.80 range = 1.00 total span)
+      const minScale = -0.20;
+      const maxScale = 0.80;
+      const span = maxScale - minScale;
+      const leftPct = Math.max(0, Math.min(100, ((p.ci_low - minScale) / span) * 100));
+      const rightPct = Math.max(0, Math.min(100, ((p.ci_high - minScale) / span) * 100));
+      const widthPct = Math.max(4, rightPct - leftPct);
+
+      document.getElementById('ci-range-text').textContent = `[${p.ci_low >= 0 ? '+' : ''}${p.ci_low.toFixed(3)}, +${p.ci_high.toFixed(3)}]`;
+      const ciBar = document.getElementById('ci-bar');
+      ciBar.style.left = `${leftPct}%`;
+      ciBar.style.width = `${widthPct}%`;
+
+      if (p.ci_low < 0) {
+        ciBar.className = "absolute top-1 bottom-1 bg-gradient-to-r from-rose-500 to-amber-400 rounded-full";
+      } else {
+        ciBar.className = "absolute top-1 bottom-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full";
+      }
+
+      document.getElementById('player-notes').textContent = p.note;
+    }
+
+    // SCATTER PLOT CANVAS LOGIC
+    function drawScatterPlot() {
+      const canvas = document.getElementById('scatterCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+
+      const w = rect.width;
+      const h = rect.height;
+      const pad = { left: 55, right: 35, top: 25, bottom: 40 };
+
+      ctx.clearRect(0, 0, w, h);
+
+      const data = currentRole === 'batters' ? BATTERS : BOWLERS;
+
+      // X: HP Balls (0 to 380)
+      const minX = 0, maxX = 380;
+      // Y: Rating (+0.10 to +0.45)
+      const minY = 0.15, maxY = 0.42;
+
+      const getX = (val) => pad.left + ((val - minX) / (maxX - minX)) * (w - pad.left - pad.right);
+      const getY = (val) => h - pad.bottom - ((val - minY) / (maxY - minY)) * (h - pad.top - pad.bottom);
+
+      // Grid Lines
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.07)";
+      ctx.lineWidth = 1;
+
+      // Y-axis ticks
+      ctx.fillStyle = "rgba(148, 163, 184, 0.7)";
+      ctx.font = "10px monospace";
+      ctx.textAlign = "right";
+
+      for (let yVal = 0.15; yVal <= 0.40; yVal += 0.05) {
+        const yPx = getY(yVal);
+        ctx.beginPath();
+        ctx.moveTo(pad.left, yPx);
+        ctx.lineTo(w - pad.right, yPx);
+        ctx.stroke();
+        ctx.fillText(`+${yVal.toFixed(2)}`, pad.left - 8, yPx + 3);
+      }
+
+      // X-axis ticks
+      ctx.textAlign = "center";
+      for (let xVal = 50; xVal <= 350; xVal += 50) {
+        const xPx = getX(xVal);
+        ctx.beginPath();
+        ctx.moveTo(xPx, pad.top);
+        ctx.lineTo(xPx, h - pad.bottom);
+        ctx.stroke();
+        ctx.fillText(`${xVal}b`, xPx, h - pad.bottom + 15);
+      }
+
+      // Axis Titles
+      ctx.fillStyle = "rgba(148, 163, 184, 0.9)";
+      ctx.font = "11px sans-serif";
+      ctx.fillText("High-Pressure Deliveries Faced / Bowled (Volume)", w / 2, h - 8);
+
+      ctx.save();
+      ctx.translate(14, h / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.textAlign = "center";
+      ctx.fillText("EB Rating (+r/b vs Situation)", 0, 0);
+      ctx.restore();
+
+      // Plot Points
+      data.forEach(p => {
+        const px = getX(p.hp_balls);
+        const py = getY(p.rating);
+        const isSelected = p.id === selectedPlayer.id;
+
+        // Color by pass count
+        let fillColor = p.pass_count === 4 ? "#10b981" : (p.pass_count === 3 ? "#06b6d4" : "#f59e0b");
+
+        // CI Vertical Error Bar
+        const pyLow = getY(Math.max(minY, p.ci_low));
+        const pyHigh = getY(Math.min(maxY, p.ci_high));
+        ctx.strokeStyle = isSelected ? "rgba(236, 72, 153, 0.7)" : "rgba(255, 255, 255, 0.15)";
+        ctx.lineWidth = isSelected ? 2 : 1;
+        ctx.beginPath();
+        ctx.moveTo(px, pyLow);
+        ctx.lineTo(px, pyHigh);
+        ctx.stroke();
+
+        // Selected halo
+        if (isSelected) {
+          ctx.beginPath();
+          ctx.arc(px, py, 14, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(236, 72, 153, 0.25)";
+          ctx.fill();
+          ctx.strokeStyle = "#ec4899";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
+
+        // Dot
+        ctx.beginPath();
+        ctx.arc(px, py, isSelected ? 7 : 5, 0, Math.PI * 2);
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // Player Label
+        ctx.fillStyle = isSelected ? "#ffffff" : "rgba(248, 250, 252, 0.85)";
+        ctx.font = isSelected ? "bold 11px sans-serif" : "10px sans-serif";
+        ctx.textAlign = "left";
+        ctx.fillText(p.name.split(' ').pop(), px + 9, py + 3);
+      });
+    }
+
+    function exportCSV() {
+      const data = currentRole === 'batters' ? BATTERS : BOWLERS;
+      let csv = "Rank,PlayerID,Name,Team,Rating_rb,CI_Low,CI_High,PassCount,HP_Balls,HP_Matches,WPA_per_ball\n";
+      data.forEach(p => {
+        csv += `${p.rank},${p.id},"${p.name}","${p.team}",${p.rating},${p.ci_low},${p.ci_high},${p.pass_count},${p.hp_balls},${p.hp_matches},${p.wpa}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.setAttribute('href', url);
+      a.setAttribute('download', `superr_selector_${currentRole}_final3.csv`);
+      a.click();
+    }
+
+    // Initialize
+    window.addEventListener('load', () => {
+      renderTable();
+      renderInspector();
+      drawScatterPlot();
+    });
+
+    window.addEventListener('resize', drawScatterPlot);
+  </script>
+</body>
+</html>
